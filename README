@@ -1,0 +1,12 @@
+
+Team Members:
+	Kate Lorenzen ( lorenzek@purdue.edu )
+	Madeline Rush ( rush24@purdue.edu )
+	Nikitha Jagadish ( njagadis@purdue.edu )
+
+Name of project: AppliCan
+
+Brief Description: Application that helps you keep track of job applications that you’ve applied to or are interested in applying to. You can create company or job title specific entries (like tasks in a todo list application). You have the ability to specify attributes like applied(yes/no), date applied, date the application closes, contact info, asked for interview(yes/no), interview date, notes, and more.
+
+Technologies & Services: HTML5, SQL Express Server, ASP.NET, C#, JavaScript
+
