@@ -24,7 +24,6 @@
     <br />
     <div>
         <asp:Label ID="Label4" runat="server" Text="Applied?"></asp:Label>
-        <asp:CheckBox ID="CheckBox1" runat="server" Text=" " />
         <asp:CheckBoxList ID="CheckBoxList2" runat="server">
             <asp:ListItem>Yes</asp:ListItem>
             <asp:ListItem>No</asp:ListItem>
@@ -91,5 +90,9 @@
     <div>
         <asp:Label ID="Label10" runat="server" Text="Notes"></asp:Label>
         <asp:TextBox ID="TextBox3" runat="server" Height="159px" Width="253px"></asp:TextBox>
+    </div>
+    <br />
+    <div>
+        <asp:Button ID="Button1" runat="server" Text="CREATE" Height="40px" OnClick="Button1_Click" Width="94px" />
     </div>
 </asp:Content>
