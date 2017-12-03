@@ -9,11 +9,11 @@
     <hr />
     <br />
     <div>
-        <asp:Button ID="Button1" runat="server" Text="Create New Entry" />
+        <asp:Button ID="CreateButton" runat="server" Text="Create New Entry" OnClick="CreateButton_Click" />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         <asp:TextBox ID="TextBox1" runat="server" Width="196px"></asp:TextBox>
         &nbsp;
-        <asp:Button ID="Button2" runat="server" Text="Search" />
+        <asp:Button ID="SearchButton" runat="server" Text="Search" />
     </div>
     <br />
     <hr />

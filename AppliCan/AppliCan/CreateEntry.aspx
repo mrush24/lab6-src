@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <div>
-            <asp:Label ID="Label3" runat="server" Text="Create New"></asp:Label>
+            <asp:Label ID="CreateNewLabel" runat="server" Text="Create New"></asp:Label>
         </div>
         <br />
         <hr />
@@ -19,47 +19,47 @@
             <tr>
                 <td>
                     <div>
-                        <asp:Label ID="Label1" runat="server" Text="Job Title/Company Name:"></asp:Label>
+                        <asp:Label ID="JobTCompNLabel" runat="server" Text="Job Title/Company Name:"></asp:Label>
                         &nbsp;
-                        <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="JobTCompN" runat="server" Width="200px"></asp:TextBox>
                     </div>
                     <br />
                     <div>
-                        <asp:Label ID="Label12" runat="server" Text="Location:"></asp:Label>
+                        <asp:Label ID="LocationLabel" runat="server" Text="Location:"></asp:Label>
                         &nbsp;
-                        <asp:DropDownList ID="DropDownList1" runat="server">
-                            <asp:ListItem>Country</asp:ListItem>
+                        <asp:DropDownList ID="CountryDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CountryDropDownList_SelectedIndexChanged">
+                            
                         </asp:DropDownList>
                         &nbsp;
-                        <asp:DropDownList ID="DropDownList2" runat="server">
-                            <asp:ListItem>State</asp:ListItem>
+                        <asp:DropDownList ID="StateDropDownList" runat="server" Visible="False" OnSelectedIndexChanged="StateDropDownList_SelectedIndexChanged">
+                            
                         </asp:DropDownList>
                         &nbsp;
-                        <asp:DropDownList ID="DropDownList3" runat="server">
-                            <asp:ListItem>City</asp:ListItem>
+                        <asp:DropDownList ID="CityDropDownList" runat="server" Visible="False">
+                            
                         </asp:DropDownList>
                     </div>
                     <br />
                     <div>
-                        <asp:Label ID="Label11" runat="server" Text="Favorite:"></asp:Label>
+                        <asp:Label ID="FavLabel" runat="server" Text="Favorite:"></asp:Label>
                         &nbsp;
-                        <asp:CheckBox ID="CheckBox2" runat="server" BorderColor="Yellow" BorderStyle="Solid" Text=" " />
+                        <asp:CheckBox ID="FavCheckBox" runat="server" BorderColor="Yellow" BorderStyle="Solid" Text=" " />
                     </div>
                     <br />
                     <div>
-                        <asp:Label ID="Label4" runat="server" Text="Applied?"></asp:Label>
+                        <asp:Label ID="AppliedLabel" runat="server" Text="Applied?"></asp:Label>
                         &nbsp;
-                        <asp:DropDownList ID="DropDownList4" runat="server">
+                        <asp:DropDownList ID="AppliedDDL" runat="server" OnSelectedIndexChanged="AppliedDDL_SelectedIndexChanged" AutoPostBack="True">
                             <asp:ListItem>No</asp:ListItem>
                             <asp:ListItem>In Progress</asp:ListItem>
                             <asp:ListItem>Yes</asp:ListItem>
                         </asp:DropDownList>
                     </div>
                     <br />
-                    <asp:Panel ID="Applied" runat="server" Visible="False">
+                    <asp:Panel ID="AppliedPanel" runat="server" Visible="False">
                         <div>
-                            <asp:Label ID="Label5" runat="server" Text="Date Applied:"></asp:Label>
-                            <asp:Calendar ID="Calendar1" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                            <asp:Label ID="DateAppliedLabel" runat="server" Text="Date Applied:"></asp:Label>
+                            <asp:Calendar ID="DateAppliedCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
                                 <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                                 <NextPrevStyle VerticalAlign="Bottom" />
                                 <OtherMonthDayStyle ForeColor="#808080" />
@@ -73,8 +73,8 @@
                         </div>
                         <br />
                         <div>
-                            <asp:Label ID="Label6" runat="server" Text="Date Application Closes:"></asp:Label>
-                            <asp:Calendar ID="Calendar2" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                            <asp:Label ID="DateAppClosesLabel" runat="server" Text="Date Application Closes:"></asp:Label>
+                            <asp:Calendar ID="DateAppClosesCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
                                 <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                                 <NextPrevStyle VerticalAlign="Bottom" />
                                 <OtherMonthDayStyle ForeColor="#808080" />
@@ -87,25 +87,25 @@
                         </div>
                         <br />
                         <div>
-                            <asp:Label ID="Label7" runat="server" Text="Contact Info: (email, url, etc.)"></asp:Label>
+                            <asp:Label ID="ContactLabel" runat="server" Text="Contact Info: (email, url, etc.)"></asp:Label>
                             &nbsp;
-                            <asp:TextBox ID="TextBox2" runat="server" Height="100px" Width="250px"></asp:TextBox>
+                            <asp:TextBox ID="ContactTextBox" runat="server" Height="100px" Width="250px"></asp:TextBox>
                         </div>
                         <br />
                         <div>
-                            <asp:Label ID="Label8" runat="server" Text="Asked for Interview?"></asp:Label>
+                            <asp:Label ID="AskedInterviewLabel" runat="server" Text="Asked for Interview?"></asp:Label>
                             &nbsp;
-                            <asp:DropDownList ID="DropDownList5" runat="server">
+                            <asp:DropDownList ID="AskedInterviewDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="AskedInterviewDropDownList_SelectedIndexChanged">
                                 <asp:ListItem>TBD</asp:ListItem>
                                 <asp:ListItem>Yes</asp:ListItem>
                                 <asp:ListItem>No</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <br />
-                        <asp:Panel ID="Interview" runat="server" Visible="False">
+                        <asp:Panel ID="InterviewPanel" runat="server" Visible="False">
                             <div>
-                                <asp:Label ID="Label9" runat="server" Text="Interview Date:"></asp:Label>
-                                <asp:Calendar ID="Calendar3" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                                <asp:Label ID="InterviewDateLabel" runat="server" Text="Interview Date:"></asp:Label>
+                                <asp:Calendar ID="InterviewDateCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
                                     <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                                     <NextPrevStyle VerticalAlign="Bottom" />
                                     <OtherMonthDayStyle ForeColor="#808080" />
@@ -120,39 +120,39 @@
                     </asp:Panel>
                 </td>
                 <td>
-                    <asp:Panel ID="EntireLeftColumn" runat="server" Visible="False">
+                    <asp:Panel ID="EntireLeftColumnPanel" runat="server" Visible="False">
                         <div>
                             &nbsp;
-                            <asp:Label ID="Label10" runat="server" Text="Notes about position:"></asp:Label>
-                            <asp:TextBox ID="TextBox3" runat="server" Height="100px" Width="250px"></asp:TextBox>
+                            <asp:Label ID="NotesPositionLabel" runat="server" Text="Notes about position:"></asp:Label>
+                            <asp:TextBox ID="NotesPositionTextBox" runat="server" Height="100px" Width="250px"></asp:TextBox>
                         </div>
                         <br />
                         <div>
-                            <asp:Label ID="Label14" runat="server" Text="Notes about company:"></asp:Label>
+                            <asp:Label ID="NotesCompLabel" runat="server" Text="Notes about company:"></asp:Label>
                             &nbsp;
-                            <asp:TextBox ID="TextBox5" runat="server" Height="100px" Width="250px"></asp:TextBox>
+                            <asp:TextBox ID="NotesCompTextBox" runat="server" Height="100px" Width="250px"></asp:TextBox>
                         </div>
                         <br />
                         <div>
-                            <asp:Label ID="Label13" runat="server" Text="Offer?"></asp:Label>
+                            <asp:Label ID="OfferLabel" runat="server" Text="Offer?"></asp:Label>
                             &nbsp;
-                            <asp:DropDownList ID="DropDownList6" runat="server">
+                            <asp:DropDownList ID="OfferDropDownList" runat="server" OnSelectedIndexChanged="OfferDropDownList_SelectedIndexChanged" AutoPostBack="True">
                                 <asp:ListItem>TBD</asp:ListItem>
                                 <asp:ListItem>Yes</asp:ListItem>
                                 <asp:ListItem>No</asp:ListItem>
                             </asp:DropDownList>
                         </div>
                         <br />
-                        <asp:Panel ID="Offer" runat="server" Visible="False">
+                        <asp:Panel ID="OfferPanel" runat="server" Visible="False">
                             <div aria-orientation="horizontal">
-                                <asp:Label ID="Label15" runat="server" Text="Offer Info:"></asp:Label>
+                                <asp:Label ID="OfferInfoLabel" runat="server" Text="Offer Info:"></asp:Label>
                                 &nbsp;
-                                <asp:TextBox ID="TextBox6" runat="server" Height="100px" Width="250px"></asp:TextBox>
+                                <asp:TextBox ID="OfferInfoTextBox" runat="server" Height="100px" Width="250px"></asp:TextBox>
                             </div>
                             <br />
                             <div>
-                                <asp:Label ID="Label16" runat="server" Text="Offer given"></asp:Label>
-                                <asp:Calendar ID="Calendar4" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                                <asp:Label ID="OfferGivenLabel" runat="server" Text="Offer given"></asp:Label>
+                                <asp:Calendar ID="OfferGivenCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
                                     <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                                     <NextPrevStyle VerticalAlign="Bottom" />
                                     <OtherMonthDayStyle ForeColor="#808080" />
@@ -165,8 +165,8 @@
                             </div>
                             <br />
                             <div>
-                                <asp:Label ID="Label17" runat="server" Text="Offer deadline"></asp:Label>
-                                <asp:Calendar ID="Calendar5" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                                <asp:Label ID="OfferDeadlineLabel" runat="server" Text="Offer deadline"></asp:Label>
+                                <asp:Calendar ID="OfferDeadlineCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
                                     <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                                     <NextPrevStyle VerticalAlign="Bottom" />
                                     <OtherMonthDayStyle ForeColor="#808080" />
@@ -188,7 +188,15 @@
         
         <br />
         <div>
-            <asp:Button ID="Button1" runat="server" Text="CREATE" Height="40px" Width="94px" />
+            <asp:Button ID="CreateButton" runat="server" Text="CREATE" Height="40px" Width="94px" />
+            <asp:Button ID="PopUp" runat="server" Text="PopUp" OnClientClick="popuppp()" />
+            <script type="text/javascript">
+                function popuppp() {
+                    var popup = window.open("MainPage.aspx", "PopupExample", "scrollbars=yes,resizable=1,height=1000,width=1000");
+                    popup.moveTo(5, 5);
+                    popup.focus();
+                }
+            </script>
         </div>
     </div>
     </form>

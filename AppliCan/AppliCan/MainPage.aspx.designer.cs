@@ -22,13 +22,13 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
-        /// Button1 control.
+        /// CreateButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button CreateButton;
         
         /// <summary>
         /// TextBox1 control.
@@ -40,13 +40,13 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.TextBox TextBox1;
         
         /// <summary>
-        /// Button2 control.
+        /// SearchButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button SearchButton;
         
         /// <summary>
         /// Table1 control.

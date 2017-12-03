@@ -14,10 +14,11 @@ namespace AppliCan
 
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
+        protected void CreateButton_Click(object sender, EventArgs e)
         {
             //create a new element
             //& save all entered variables
+            Response.Redirect("~/CreateEntry.aspx");
         }
     }
 }
