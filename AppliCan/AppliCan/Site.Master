@@ -5,16 +5,16 @@
 <html>
 <head runat="server">
     <asp:ContentPlaceHolder ID="head" runat="server">
+
     </asp:ContentPlaceHolder>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
-                <div>
-                    <h1><asp:Label ID="Label2" runat="server" Text="AppliCan" Font-Bold="True" Font-Italic="True" Font-Names="French Script MT" Font-Size="XX-Large"></asp:Label></h1>
+            <div>
+                <h1><asp:Label ID="Label2" runat="server" Text="AppliCan" Font-Bold="True" Font-Italic="True" Font-Names="French Script MT" Font-Size="XX-Large"></asp:Label></h1>
                 </div>
-                <br />
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
         </div>
     </form>
