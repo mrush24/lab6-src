@@ -112,13 +112,22 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.Label Label4;
         
         /// <summary>
-        /// CheckBoxList2 control.
+        /// DropDownList4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList2;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList4;
+        
+        /// <summary>
+        /// Applied control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Applied;
         
         /// <summary>
         /// Label5 control.
@@ -184,13 +193,22 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.Label Label8;
         
         /// <summary>
-        /// CheckBoxList1 control.
+        /// DropDownList5 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList5;
+        
+        /// <summary>
+        /// Interview control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Interview;
         
         /// <summary>
         /// Label9 control.
@@ -209,6 +227,15 @@ namespace AppliCan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar Calendar3;
+        
+        /// <summary>
+        /// EntireLeftColumn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel EntireLeftColumn;
         
         /// <summary>
         /// Label10 control.
@@ -256,13 +283,22 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.Label Label13;
         
         /// <summary>
-        /// CheckBoxList3 control.
+        /// DropDownList6 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList3;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList6;
+        
+        /// <summary>
+        /// Offer control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Offer;
         
         /// <summary>
         /// Label15 control.
