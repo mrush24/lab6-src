@@ -10,27 +10,36 @@
     <form id="form1" runat="server">
     <div>
         <div>
-            <h1><asp:Label ID="Label2" runat="server" Text="AppliCan"></asp:Label></h1>
-        </div>
-        <br />
-        <div>
-            <asp:Label ID="Label3" runat="server" Text="Description"></asp:Label>
+            <asp:Label ID="Label3" runat="server" Text="Create New"></asp:Label>
         </div>
         <br />
         <hr />
         <br />
         <div>
-            <asp:Label ID="Label1" runat="server" Text="Job Title/Company Name"></asp:Label>
-            <asp:TextBox ID="TextBox1" runat="server"></asp:TextBox>
+            <asp:Label ID="Label1" runat="server" Text="Job Title/Company Name:"></asp:Label>
+            &nbsp;
+            <asp:TextBox ID="TextBox1" runat="server" Width="200px"></asp:TextBox>
         </div>
         <br />
         <div>
-            <asp:Label ID="Label12" runat="server" Text="Location"></asp:Label>
-            <asp:TextBox ID="TextBox4" runat="server"></asp:TextBox>
+            <asp:Label ID="Label12" runat="server" Text="Location:"></asp:Label>
+            &nbsp;
+            <asp:DropDownList ID="DropDownList1" runat="server">
+                <asp:ListItem>Country</asp:ListItem>
+            </asp:DropDownList>
+            &nbsp;
+            <asp:DropDownList ID="DropDownList2" runat="server">
+                <asp:ListItem>State</asp:ListItem>
+            </asp:DropDownList>
+            &nbsp;
+            <asp:DropDownList ID="DropDownList3" runat="server">
+                <asp:ListItem>City</asp:ListItem>
+            </asp:DropDownList>
         </div>
         <br />
         <div>
-            <asp:Label ID="Label11" runat="server" Text="Favorite"></asp:Label>
+            <asp:Label ID="Label11" runat="server" Text="Favorite:"></asp:Label>
+            &nbsp;
             <asp:CheckBox ID="CheckBox2" runat="server" BorderColor="Yellow" BorderStyle="Solid" Text=" " />
         </div>
         <br />
@@ -72,8 +81,9 @@
         </div>
         <br />
         <div>
-            <asp:Label ID="Label7" runat="server" Text="Contact Info (email, url, etc.)"></asp:Label>
-            <asp:TextBox ID="TextBox2" runat="server" Height="62px" Width="222px"></asp:TextBox>
+            <asp:Label ID="Label7" runat="server" Text="Contact Info: (email, url, etc.)"></asp:Label>
+            &nbsp;
+            <asp:TextBox ID="TextBox2" runat="server" Height="100px" Width="250px"></asp:TextBox>
         </div>
         <br />
         <div>
@@ -101,12 +111,14 @@
         <br />
         <div>
             <asp:Label ID="Label10" runat="server" Text="Notes about position:"></asp:Label>
-            <asp:TextBox ID="TextBox3" runat="server" Height="159px" Width="253px"></asp:TextBox>
+            &nbsp;
+            <asp:TextBox ID="TextBox3" runat="server" Height="100px" Width="250px"></asp:TextBox>
         </div>
         <br />
         <div>
             <asp:Label ID="Label14" runat="server" Text="Notes about company:"></asp:Label>
-            <asp:TextBox ID="TextBox5" runat="server" Height="159px" Width="253px"></asp:TextBox>
+            &nbsp;
+            <asp:TextBox ID="TextBox5" runat="server" Height="100px" Width="250px"></asp:TextBox>
         </div>
         <br />
         <div>
@@ -118,9 +130,10 @@
             </asp:CheckBoxList>
         </div>
         <br />
-        <div>
+        <div aria-orientation="horizontal">
             <asp:Label ID="Label15" runat="server" Text="Offer Info:"></asp:Label>
-            <asp:TextBox ID="TextBox6" runat="server" Height="102px" Width="234px"></asp:TextBox>
+            &nbsp;
+            <asp:TextBox ID="TextBox6" runat="server" Height="100px" Width="250px"></asp:TextBox>
         </div>
         <br />
         <div>
