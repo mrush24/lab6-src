@@ -189,10 +189,10 @@
         <br />
         <div>
             <asp:Button ID="CreateButton" runat="server" Text="CREATE" Height="40px" Width="94px" />
-            <asp:Button ID="PopUp" runat="server" Text="PopUp" OnClientClick="popuppp()" />
+            <asp:Button ID="PopUp" runat="server" Text="PopUp" OnClientClick="popuppp()" />	
             <script type="text/javascript">
                 function popuppp() {
-                    var popup = window.open("MainPage.aspx", "PopupExample", "scrollbars=yes,resizable=1,height=1000,width=1000");
+                    var popup = window.open("PopUp1.aspx", "PopupExample", "scrollbars=yes,resizable=1,height=1000,width=1000");
                     popup.moveTo(5, 5);
                     popup.focus();
                 }
