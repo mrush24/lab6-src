@@ -20,5 +20,10 @@ namespace AppliCan
             //& save all entered variables
             Response.Redirect("~/CreateEntry.aspx");
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/LoginPage.aspx");
+        }
     }
 }
