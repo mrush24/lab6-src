@@ -13,7 +13,7 @@ namespace AppliCan
         {
             if (!IsPostBack)
             {
-                JobTCompN.Text = "YOOOOOOO";
+               // JobTCompN.Text = "YOOOOOOO";
             }
         }
 

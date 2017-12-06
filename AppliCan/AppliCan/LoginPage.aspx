@@ -1,30 +1,20 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="AppliCan.LoginPage" %>
+﻿<%@ Page Tite ="Login Page" Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="AppliCan.LoginPage" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-    <style type="text/css">
-        #form1 {
-            height: 168px;
-        }
-    </style>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            Login Page<br />
+<asp:Content ID="ContentLogin" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+        <div align="center">
             <br />
-            Username</div>
-        <input id="Text1" type="text" /><br />
+            Username:  &nbsp; &nbsp; 
+        <asp:TextBox ID="UserNameTextBox" runat="server"></asp:TextBox>
         <br />
-        Password<br />
-        <input id="Text2" type="text" /><br />
-        <input id="Submit1" type="submit" value="submit" /></form>
+        <br />
+        Password: &nbsp; &nbsp; 
+        <asp:TextBox ID="PasswordTextBox" runat="server"></asp:TextBox>
+        <br />
+        <br />
+            <asp:Button ID="LoginButton" runat="server" Text="Login" Width="100px" OnClick="LoginButton_Click" />
     <p>
         &nbsp;</p>
     <p>
         &nbsp;</p>
-</body>
-</html>
+    </div>
+    </asp:Content>

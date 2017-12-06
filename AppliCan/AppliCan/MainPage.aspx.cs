@@ -11,7 +11,18 @@ namespace AppliCan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                SqlDataSource GridSqlDataSource = new SqlDataSource();
+                GridSqlDataSource.ID = "GridSqlDataSource";
+                this.Page.Controls.Add(GridSqlDataSource);
+                GridSqlDataSource.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["applican"].ConnectionString;
+                GridSqlDataSource.SelectCommand = "SELECT * JobTitle, CompanyName, Location, HasApplied, DateApplied, DateAppCloses, "
+                    + "HasInterview, DateInterview, HasOffer, OfferNotes, DateOfferGiven, DateOfferDeadline, ContactInfo "
+                    + "WHERE ";
+                AccountGridView.DataSource = GridSqlDataSource;
+                AccountGridView.DataBind();
+            }
         }
 
         protected void CreateButton_Click(object sender, EventArgs e)
@@ -19,11 +30,6 @@ namespace AppliCan
             //create a new element
             //& save all entered variables
             Response.Redirect("~/CreateEntry.aspx");
-        }
-
-        protected void Button1_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/LoginPage.aspx");
         }
     }
 }
