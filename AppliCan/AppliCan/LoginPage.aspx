@@ -1,6 +1,7 @@
-﻿<%@ Page Tite ="Login Page" Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="AppliCan.LoginPage" %>
+﻿<%@ Page Title ="Login Page" Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="AppliCan.LoginPage" %>
 
 <asp:Content ID="ContentLogin" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+     <asp:HiddenField ID="usernamehide" runat="server" />
         <div align="center">
             <br />
             Username:  &nbsp; &nbsp; 

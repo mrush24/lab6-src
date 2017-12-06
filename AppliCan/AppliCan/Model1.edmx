@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="applicanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AppliCanAccounts">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="AppliCanEntries">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="AccountUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Favorite" Type="int" />
+          <Property Name="Location" Type="nvarchar" MaxLength="50" />
+          <Property Name="HasApplied" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateApplied" Type="datetime" />
+          <Property Name="DateAppCloses" Type="datetime" />
+          <Property Name="HasInterview" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateInterview" Type="datetime" />
+          <Property Name="HasOffer" Type="nvarchar" MaxLength="50" />
+          <Property Name="OfferNotes" Type="nvarchar(max)" />
+          <Property Name="DateOfferGiven" Type="datetime" />
+          <Property Name="DateOfferDeadline" Type="datetime" />
+          <Property Name="ContactInfo" Type="nvarchar" MaxLength="50" />
+          <Property Name="PositionNotes" Type="nvarchar(max)" />
+          <Property Name="CompanyNotes" Type="nvarchar(max)" />
+          <Property Name="Enabled" Type="int" />
+        </EntityType>
+        <EntityContainer Name="applicanModelStoreContainer">
+          <EntitySet Name="AppliCanAccounts" EntityType="Self.AppliCanAccounts" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="AppliCanEntries" EntityType="Self.AppliCanEntries" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="applicanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="AppliCanAccount">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="AppliCanEntry">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="AccountUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Favorite" Type="Int32" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HasApplied" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateApplied" Type="DateTime" Precision="3" />
+          <Property Name="DateAppCloses" Type="DateTime" Precision="3" />
+          <Property Name="HasInterview" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateInterview" Type="DateTime" Precision="3" />
+          <Property Name="HasOffer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OfferNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfferGiven" Type="DateTime" Precision="3" />
+          <Property Name="DateOfferDeadline" Type="DateTime" Precision="3" />
+          <Property Name="ContactInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PositionNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Enabled" Type="Int32" />
+        </EntityType>
+        <EntityContainer Name="applicanEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="AppliCanAccounts" EntityType="Self.AppliCanAccount" />
+          <EntitySet Name="AppliCanEntries" EntityType="Self.AppliCanEntry" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="applicanModelStoreContainer" CdmEntityContainer="applicanEntities">
+          <EntitySetMapping Name="AppliCanAccounts">
+            <EntityTypeMapping TypeName="applicanModel.AppliCanAccount">
+              <MappingFragment StoreEntitySet="AppliCanAccounts">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppliCanEntries">
+            <EntityTypeMapping TypeName="applicanModel.AppliCanEntry">
+              <MappingFragment StoreEntitySet="AppliCanEntries">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="AccountUser" ColumnName="AccountUser" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="Favorite" ColumnName="Favorite" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="HasApplied" ColumnName="HasApplied" />
+                <ScalarProperty Name="DateApplied" ColumnName="DateApplied" />
+                <ScalarProperty Name="DateAppCloses" ColumnName="DateAppCloses" />
+                <ScalarProperty Name="HasInterview" ColumnName="HasInterview" />
+                <ScalarProperty Name="DateInterview" ColumnName="DateInterview" />
+                <ScalarProperty Name="HasOffer" ColumnName="HasOffer" />
+                <ScalarProperty Name="OfferNotes" ColumnName="OfferNotes" />
+                <ScalarProperty Name="DateOfferGiven" ColumnName="DateOfferGiven" />
+                <ScalarProperty Name="DateOfferDeadline" ColumnName="DateOfferDeadline" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+                <ScalarProperty Name="PositionNotes" ColumnName="PositionNotes" />
+                <ScalarProperty Name="CompanyNotes" ColumnName="CompanyNotes" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -8,6 +8,24 @@
     </style>
 </asp:Content>
 <asp:Content ID="ContentMainB" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <script type="text/javascript">
+        function loadingname() {
+            var user = '<%=Session["Data"]%>'
+            var userhide = document.getElementById('<%= usernamehidden.ClientID%>').value
+            userhide.value = user
+            var post = isPosted()
+            if (post == 'False') {
+                document.forms[0].submit()
+            }
+        }
+        function isPosted() {
+            var ret = '<%= Page.IsPostBack%>'
+            return ret
+    }
+    </script>
+    <body onload="loadingname()">
+    <asp:HiddenField ID="usernamehidden" runat="server" />
+
     <div>
         
         <br />
@@ -24,8 +42,9 @@
         <asp:Button ID="SearchButton" runat="server" Text="Search" />
     </div>
     <br />
-    <asp:GridView ID="AccountGridView" runat="server">
+    <asp:GridView ID="AccountGridView" runat="server" OnRowDataBound="AccountGridView_RowDataBound">
 </asp:GridView>
     <br />
     <hr />
+        </body>
     </asp:Content>

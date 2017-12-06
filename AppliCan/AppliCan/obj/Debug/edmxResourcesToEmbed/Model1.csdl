@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="applicanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AppliCanAccount">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="AppliCanEntry">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="AccountUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Favorite" Type="Int32" />
+    <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="HasApplied" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateApplied" Type="DateTime" Precision="3" />
+    <Property Name="DateAppCloses" Type="DateTime" Precision="3" />
+    <Property Name="HasInterview" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DateInterview" Type="DateTime" Precision="3" />
+    <Property Name="HasOffer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="OfferNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DateOfferGiven" Type="DateTime" Precision="3" />
+    <Property Name="DateOfferDeadline" Type="DateTime" Precision="3" />
+    <Property Name="ContactInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PositionNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="CompanyNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Enabled" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="applicanEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AppliCanAccounts" EntityType="Self.AppliCanAccount" />
+    <EntitySet Name="AppliCanEntries" EntityType="Self.AppliCanEntry" />
+  </EntityContainer>
+</Schema>

@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="applicanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AppliCanAccounts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="AppliCanEntries">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="AccountUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Favorite" Type="int" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="HasApplied" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateApplied" Type="datetime" />
+    <Property Name="DateAppCloses" Type="datetime" />
+    <Property Name="HasInterview" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateInterview" Type="datetime" />
+    <Property Name="HasOffer" Type="nvarchar" MaxLength="50" />
+    <Property Name="OfferNotes" Type="nvarchar(max)" />
+    <Property Name="DateOfferGiven" Type="datetime" />
+    <Property Name="DateOfferDeadline" Type="datetime" />
+    <Property Name="ContactInfo" Type="nvarchar" MaxLength="50" />
+    <Property Name="PositionNotes" Type="nvarchar(max)" />
+    <Property Name="CompanyNotes" Type="nvarchar(max)" />
+    <Property Name="Enabled" Type="int" />
+  </EntityType>
+  <EntityContainer Name="applicanModelStoreContainer">
+    <EntitySet Name="AppliCanAccounts" EntityType="Self.AppliCanAccounts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AppliCanEntries" EntityType="Self.AppliCanEntries" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

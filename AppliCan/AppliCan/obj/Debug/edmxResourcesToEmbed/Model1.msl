@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="applicanModelStoreContainer" CdmEntityContainer="applicanEntities">
+    <EntitySetMapping Name="AppliCanAccounts">
+      <EntityTypeMapping TypeName="applicanModel.AppliCanAccount">
+        <MappingFragment StoreEntitySet="AppliCanAccounts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AppliCanEntries">
+      <EntityTypeMapping TypeName="applicanModel.AppliCanEntry">
+        <MappingFragment StoreEntitySet="AppliCanEntries">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AccountUser" ColumnName="AccountUser" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Favorite" ColumnName="Favorite" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="HasApplied" ColumnName="HasApplied" />
+          <ScalarProperty Name="DateApplied" ColumnName="DateApplied" />
+          <ScalarProperty Name="DateAppCloses" ColumnName="DateAppCloses" />
+          <ScalarProperty Name="HasInterview" ColumnName="HasInterview" />
+          <ScalarProperty Name="DateInterview" ColumnName="DateInterview" />
+          <ScalarProperty Name="HasOffer" ColumnName="HasOffer" />
+          <ScalarProperty Name="OfferNotes" ColumnName="OfferNotes" />
+          <ScalarProperty Name="DateOfferGiven" ColumnName="DateOfferGiven" />
+          <ScalarProperty Name="DateOfferDeadline" ColumnName="DateOfferDeadline" />
+          <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+          <ScalarProperty Name="PositionNotes" ColumnName="PositionNotes" />
+          <ScalarProperty Name="CompanyNotes" ColumnName="CompanyNotes" />
+          <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
