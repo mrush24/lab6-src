@@ -14,9 +14,30 @@ namespace AppliCan
 
         }
 
-        protected void LoginHereButton_Click(object sender, EventArgs e)
+        protected void SignMeUpButton_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/LoginPage.aspx");
+            using (var ae = new applicanEntities())
+            {
+                var entry = new AppliCanAccount();
+                string user = UsernameTextBox.Text;
+                string pass = PasswordTextBox.Text;
+                bool userExists = ae.AppliCanAccounts.Any(Username => Username.Equals(user));
+                if (!userExists)
+                {
+                    entry.Username = user;
+                    entry.Password = pass;
+                    ae.AppliCanAccounts.Add(entry);
+                    ae.SaveChanges();
+                        //go to mainpage with hidden field of username
+                    usernamehide.Value = user;
+                    Session["Data"] = usernamehide.Value;
+                        //where to redirect?
+                        //Response.Redirect("~/LoginPage.aspx");
+                        //Response.Redirect("MainPage.aspx");
+                }
+
+            }
+            
         }
     }
 }

@@ -67,12 +67,19 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.GridView AccountGridView;
         
         /// <summary>
+<<<<<<< HEAD
+        /// AccountInfoSqlDataSource control.
+=======
         /// ErrorPanel control.
+>>>>>>> 143eb4f9e1bd1dcb807bb00cccac19bb2bf6323e
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<< HEAD
+        protected global::System.Web.UI.WebControls.SqlDataSource AccountInfoSqlDataSource;
+=======
         protected global::System.Web.UI.WebControls.Panel ErrorPanel;
         
         /// <summary>
@@ -92,5 +99,6 @@ namespace AppliCan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button ReturnButton;
+>>>>>>> 143eb4f9e1bd1dcb807bb00cccac19bb2bf6323e
     }
 }

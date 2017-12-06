@@ -27,16 +27,9 @@ namespace AppliCan
                 {
                     if (prevPage.Contains("LoginPage"))
                     {
-                        SqlDataSource GridSqlDataSource = new SqlDataSource();
-                        GridSqlDataSource.ID = "GridSqlDataSource";
-                        this.Page.Controls.Add(GridSqlDataSource);
-                        //RDSContext.Create();
-                        GridSqlDataSource.ConnectionString = System.Configuration.ConfigurationManager.ConnectionStrings["applican"].ConnectionString;
-                        GridSqlDataSource.SelectCommand = "SELECT distinct JobTitle, CompanyName, Location, HasApplied, DateApplied, DateAppCloses, "
-                            + "HasInterview, DateInterview, HasOffer, OfferNotes, DateOfferGiven, DateOfferDeadline, ContactInfo "
-                            + "WHERE AccountUser = '" + usernamehidden.Value + "'";
-                        AccountGridView.DataSource = GridSqlDataSource;
-                        AccountGridView.DataBind();
+                        string query = "SELECT [JobTitle], [CompanyName], [HasApplied], [DateAppCloses], [DateInterview], [DateOfferDeadline] FROM [AppliCanEntries] WHERE([Enabled] = @Enabled)  AND [AccountUser] = '" + usernamehidden.Value + "'";
+                        //AccountInfoSqlDataSource.SelectCommand = AccountInfoSqlDataSource.SelectCommand + " AND [AccountUser] = '"+ usernamehidden.Value + "'";
+                        AccountInfoSqlDataSource.SelectCommand = query;
                     }
                     else
                     {
@@ -50,6 +43,7 @@ namespace AppliCan
         {
             //create a new element
             //& save all entered variables
+            Session["Data"] = usernamehidden.Value;
             Response.Redirect("~/CreateEntry.aspx");
         }
 
@@ -60,7 +54,8 @@ namespace AppliCan
                 e.Row.Attributes["onmouseover"] = "this.style.backgroundColor='#00438B';this.style.color='#DEE5EF'";
                 e.Row.Attributes["onmouseout"] = "this.style.backgroundColor='white';this.style.color='black'";
 
-                e.Row.ToolTip = "Click to select row";
+                e.Row.ToolTip = "Click to see details.";
+                e.Row.Attributes["onclick"] = "ShowPopup('"+ usernamehidden.Value +"')";
             }
         }
     }
