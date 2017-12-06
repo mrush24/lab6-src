@@ -22,14 +22,16 @@ namespace AppliCan
             if (AppliedDDL.SelectedValue == "Yes")
             {
                 AppliedPanel.Visible = true;
-                EntireLeftColumnPanel.Visible = true;
+                EntireRightColumnPanel.Visible = true;
+                MiddleAppliedPanel.Visible = true;
             }
             else
             {
                 AppliedPanel.Visible = false;
-                EntireLeftColumnPanel.Visible = false;
+                EntireRightColumnPanel.Visible = false;
                 InterviewPanel.Visible = false;
                 OfferPanel.Visible = false;
+                MiddleAppliedPanel.Visible = false;
                 AskedInterviewDropDownList.SelectedValue = "TBD";
                 OfferDropDownList.SelectedValue = "TBD";
             }

@@ -86,6 +86,23 @@
                             </asp:Calendar>
                         </div>
                         <br />
+                        <br />
+                    </asp:Panel>
+                </td>
+                <td>
+                    <div>
+                        <asp:Label ID="NotesPositionLabel" runat="server" Text="Notes about position:"></asp:Label>
+                        &nbsp;&nbsp;&nbsp;
+                        <asp:TextBox ID="NotesPositionTextBox" runat="server" Height="100px" Width="250px"></asp:TextBox>
+                    </div>
+                    <br />
+                    <div>
+                        <asp:Label ID="NotesCompLabel" runat="server" Text="Notes about company:"></asp:Label>
+                        &nbsp;
+                        <asp:TextBox ID="NotesCompTextBox" runat="server" Height="100px" Width="250px"></asp:TextBox>
+                    </div>
+                    <br />
+                    <asp:Panel ID="MiddleAppliedPanel" runat="server" Visible="false">
                         <div>
                             <asp:Label ID="ContactLabel" runat="server" Text="Contact Info: (email, url, etc.)"></asp:Label>
                             &nbsp;
@@ -101,38 +118,26 @@
                                 <asp:ListItem>No</asp:ListItem>
                             </asp:DropDownList>
                         </div>
-                        <br />
-                        <asp:Panel ID="InterviewPanel" runat="server" Visible="False">
-                            <div>
-                                <asp:Label ID="InterviewDateLabel" runat="server" Text="Interview Date:"></asp:Label>
-                                <asp:Calendar ID="InterviewDateCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
-                                    <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-                                    <NextPrevStyle VerticalAlign="Bottom" />
-                                    <OtherMonthDayStyle ForeColor="#808080" />
-                                    <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                                    <SelectorStyle BackColor="#CCCCCC" />
-                                    <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-                                    <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-                                    <WeekendDayStyle BackColor="#FFFFCC" />
-                                </asp:Calendar>
-                            </div>
-                        </asp:Panel>
+                    </asp:Panel>
+                    <br />
+                    <asp:Panel ID="InterviewPanel" runat="server" Visible="False">
+                        <div>
+                           <asp:Label ID="InterviewDateLabel" runat="server" Text="Interview Date:"></asp:Label>
+                            <asp:Calendar ID="InterviewDateCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                                <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                                <NextPrevStyle VerticalAlign="Bottom" />
+                                <OtherMonthDayStyle ForeColor="#808080" />
+                                <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                                <SelectorStyle BackColor="#CCCCCC" />
+                                <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                                <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                                <WeekendDayStyle BackColor="#FFFFCC" />
+                           </asp:Calendar>
+                        </div>
                     </asp:Panel>
                 </td>
                 <td>
-                    <asp:Panel ID="EntireLeftColumnPanel" runat="server" Visible="False">
-                        <div>
-                            &nbsp;
-                            <asp:Label ID="NotesPositionLabel" runat="server" Text="Notes about position:"></asp:Label>
-                            <asp:TextBox ID="NotesPositionTextBox" runat="server" Height="100px" Width="250px"></asp:TextBox>
-                        </div>
-                        <br />
-                        <div>
-                            <asp:Label ID="NotesCompLabel" runat="server" Text="Notes about company:"></asp:Label>
-                            &nbsp;
-                            <asp:TextBox ID="NotesCompTextBox" runat="server" Height="100px" Width="250px"></asp:TextBox>
-                        </div>
-                        <br />
+                    <asp:Panel ID="EntireRightColumnPanel" runat="server" Visible="False">
                         <div>
                             <asp:Label ID="OfferLabel" runat="server" Text="Offer?"></asp:Label>
                             &nbsp;
@@ -177,6 +182,8 @@
                                     <WeekendDayStyle BackColor="#FFFFCC" />
                                 </asp:Calendar>
                             </div>
+                            <br />
+                            <br />
                         </asp:Panel>
                     </asp:Panel>
                 </td>
