@@ -9,7 +9,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div>
-        <img alt="logo" class="auto-style1" src="file://myhome.itap.purdue.edu/puhome/pu.data/Desktop/AppliCanLogo.png" /><br />
+        <img alt="logo" class="auto-style1" src="https://i.imgur.com/S2TIRns.png" /><br />
         <br />
         <asp:Label ID="Label3" runat="server" Text="To add a new job/company application to your list click “Create New Entry” <br>To remove an entry click on the desired entry and click “Delete”" Font-Size="Small"></asp:Label>
     </div>
