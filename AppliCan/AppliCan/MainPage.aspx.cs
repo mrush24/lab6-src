@@ -62,5 +62,6 @@ namespace AppliCan
 
                 e.Row.ToolTip = "Click to select row";
             }
+        }
     }
 }

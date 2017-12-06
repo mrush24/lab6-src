@@ -31,22 +31,40 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.Label CreateNewLabel;
         
         /// <summary>
-        /// JobTCompNLabel control.
+        /// JobTitleLabel control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label JobTCompNLabel;
+        protected global::System.Web.UI.WebControls.Label JobTitleLabel;
         
         /// <summary>
-        /// JobTCompN control.
+        /// JobTitleTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox JobTCompN;
+        protected global::System.Web.UI.WebControls.TextBox JobTitleTextBox;
+        
+        /// <summary>
+        /// CompanyNameLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label CompanyNameLabel;
+        
+        /// <summary>
+        /// CompanyNameTextBox control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox CompanyNameTextBox;
         
         /// <summary>
         /// LocationLabel control.

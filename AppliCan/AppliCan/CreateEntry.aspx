@@ -10,7 +10,7 @@
     <form id="form1" runat="server">
     <div>
         <div>
-            <asp:Label ID="CreateNewLabel" runat="server" Text="Create New"></asp:Label>
+            <asp:Label ID="CreateNewLabel" runat="server" Text="Create New Entry"></asp:Label>
         </div>
         <br />
         <hr />
@@ -19,9 +19,13 @@
             <tr>
                 <td>
                     <div>
-                        <asp:Label ID="JobTCompNLabel" runat="server" Text="Job Title/Company Name:"></asp:Label>
+                        <asp:Label ID="JobTitleLabel" runat="server" Text="Job Title:"></asp:Label>
                         &nbsp;
-                        <asp:TextBox ID="JobTCompN" runat="server" Width="200px"></asp:TextBox>
+                        <asp:TextBox ID="JobTitleTextBox" runat="server" Width="200px"></asp:TextBox>
+                        &nbsp;&nbsp;
+                        <asp:Label ID="CompanyNameLabel" runat="server" Text="Company Name:"></asp:Label>
+                        &nbsp;
+                        <asp:TextBox ID="CompanyNameTextBox" runat="server" Width="200px"></asp:TextBox>
                     </div>
                     <br />
                     <div>
