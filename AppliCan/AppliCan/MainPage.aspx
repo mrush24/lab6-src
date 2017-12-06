@@ -67,5 +67,19 @@
         </asp:SqlDataSource>
     <br />
     <hr />
+
+
+        <asp:Panel ID="ErrorPanel" runat="server" Visible="False">
+            <div align="center">
+                <asp:Label ID="PageNotFoundLabel" runat="server" Text="Page Not Found"></asp:Label>
+                <br />
+                <br />
+                <hr />
+                <br />
+                <asp:Button ID="ReturnButton" runat="server" Text="Return To Start Page" onClick="ReturnButton_Click" Font-Bold="True"/>
+            </div>
+        </asp:Panel>
+
+
         </body>
     </asp:Content>

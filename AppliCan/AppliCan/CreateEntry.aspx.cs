@@ -70,5 +70,10 @@ namespace AppliCan
                 OfferPanel.Visible = false;
             }
         }
+
+        protected void ReturnButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/DefaultPage.aspx");
+        }
     }
 }
