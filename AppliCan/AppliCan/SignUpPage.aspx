@@ -2,6 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <asp:HiddenField ID="usernamehide" runat="server" />
     <div align="center">
         <asp:Label ID="SignUpLabel" runat="server" Text="Create An Account" Font-Bold="True" Font-Size="Medium"></asp:Label>
     </div>

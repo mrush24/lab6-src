@@ -21,9 +21,9 @@
         function isPosted() {
             var ret = '<%= Page.IsPostBack%>'
             return ret
-    }
+        }
     </script>
-    <body onload="loadingname()">
+    <body onload="loadingname();" align="center">
     <asp:HiddenField ID="usernamehidden" runat="server" />
 
     <div>
@@ -42,8 +42,29 @@
         <asp:Button ID="SearchButton" runat="server" Text="Search" />
     </div>
     <br />
-    <asp:GridView ID="AccountGridView" runat="server" OnRowDataBound="AccountGridView_RowDataBound">
+    <asp:GridView ID="AccountGridView" runat="server" OnRowDataBound="AccountGridView_RowDataBound" AutoGenerateColumns="False" DataSourceID="AccountInfoSqlDataSource">
+        <Columns>
+            <asp:BoundField DataField="JobTitle" HeaderText="Job Title" SortExpression="JobTitle" />
+            <asp:BoundField DataField="CompanyName" HeaderText="Company Name" SortExpression="CompanyName" />
+            <asp:BoundField DataField="HasApplied" HeaderText="Applied?" SortExpression="HasApplied" />
+            <asp:BoundField DataField="DateAppCloses" HeaderText="Apply By" SortExpression="DateAppCloses" />
+            <asp:BoundField DataField="DateInterview" HeaderText="Interview Date" SortExpression="DateInterview" />
+            <asp:BoundField DataField="DateOfferDeadline" HeaderText="Offer Deadline" SortExpression="DateOfferDeadline" />
+        </Columns>
 </asp:GridView>
+        <script type="text/javascript">
+            function ShowPopup(user) {
+                var popup = window.open("PopUp1.aspx", "ApplicationDetails");
+                popup.moveTo(10, 10);
+                var gridview = document.getElementById('<%=AccountGridView.ClientID%>')
+                gridview.setAttribute("onclick", user)
+            }
+        </script>
+        <asp:SqlDataSource ID="AccountInfoSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:applicanConnectionString %>" SelectCommand="SELECT [JobTitle], [CompanyName], [HasApplied], [DateAppCloses], [DateInterview], [DateOfferDeadline] FROM [AppliCanEntries] WHERE ([Enabled] = @Enabled)">
+            <SelectParameters>
+                <asp:Parameter DefaultValue="1" Name="Enabled" Type="Int32" />
+            </SelectParameters>
+        </asp:SqlDataSource>
     <br />
     <hr />
         </body>

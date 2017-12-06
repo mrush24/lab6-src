@@ -6,8 +6,24 @@
 <head runat="server">
     <title>Create New Entry</title>
     </head>
-<body>
+    <script type="text/javascript">
+        function loadingname() {
+            var user = '<%=Session["Data"]%>'
+            var userhide = document.getElementById('<%= usernamehide.ClientID%>').value
+            userhide.value = user
+            var post = isPosted()
+            if (post == 'False') {
+                document.forms[0].submit()
+            }
+        }
+        function isPosted() {
+            var ret = '<%= Page.IsPostBack%>'
+            return ret
+        }
+    </script>
+<body onload ="">
     <form id="form1" runat="server">
+        <asp:HiddenField ID="usernamehide" runat="server" />
     <div>
         <div>
             <asp:Label ID="CreateNewLabel" runat="server" Text="Create New"></asp:Label>
