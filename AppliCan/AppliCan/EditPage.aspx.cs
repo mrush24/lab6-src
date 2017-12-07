@@ -17,13 +17,16 @@ namespace AppliCan
                 JobTitleTextBox.Text = entry.JobTitle;
                 CompanyNameTextBox.Text = entry.CompanyName;
                 var location = entry.Location;
-                Char[] split = {',', ' '};
+                Char[] split = { ',', ' ' };
                 String[] country = location.Split(split);
-                CountryDropDownList.SelectedValue = country[0]; 
+                CountryDropDownList.SelectedValue = country[0];
                 StateDropDownList.SelectedValue = country[2];
-                if (entry.Favorite == 0) {
+                if (entry.Favorite == 0)
+                {
                     FavCheckBox.Checked = false;
-                } else if (entry.Favorite == 1) {
+                }
+                else if (entry.Favorite == 1)
+                {
                     FavCheckBox.Checked = true;
                 }
                 AppliedDDL.SelectedValue = entry.HasApplied;
@@ -31,17 +34,20 @@ namespace AppliCan
                 NotesPositionTextBox.Text = entry.PositionNotes;
                 NotesCompTextBox.Text = entry.CompanyNotes;
                 ContactTextBox.Text = entry.ContactInfo;
-                if (entry.HasApplied == "Yes") {
+                if (entry.HasApplied == "Yes")
+                {
                     AppliedPanel.Visible = true;
                     MiddleAppliedPanel.Visible = true;
                     DateAppliedCalendar.SelectedDate = (System.DateTime)entry.DateApplied;
                     AskedInterviewDropDownList.SelectedValue = entry.HasInterview;
-                    if (entry.HasInterview == "Yes") {
+                    if (entry.HasInterview == "Yes")
+                    {
                         InterviewPanel.Visible = true;
                         EntireRightColumnPanel.Visible = true;
                         InterviewDateCalendar.SelectedDate = (System.DateTime)entry.DateInterview;
                         OfferDropDownList.SelectedValue = entry.HasOffer;
-                        if (entry.HasOffer == "Yes") {
+                        if (entry.HasOffer == "Yes")
+                        {
                             OfferPanel.Visible = true;
                             OfferInfoTextBox.Text = entry.OfferNotes;
                             OfferGivenCalendar.SelectedDate = (System.DateTime)entry.DateOfferGiven;
@@ -49,6 +55,7 @@ namespace AppliCan
                         }
                     }
                 }
+            }
         }
     }
 }

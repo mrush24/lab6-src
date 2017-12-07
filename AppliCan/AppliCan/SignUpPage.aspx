@@ -26,7 +26,7 @@
     <div align="center">
         <label><b>Password</b></label> <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="PasswordTextBox" runat="server" Width="189px"></asp:TextBox>
+        <asp:TextBox ID="PasswordTextBox" runat="server" Width="189px" TextMode="Password"></asp:TextBox>
     </div>
     <br />
     <div align="center">

@@ -33,7 +33,7 @@ namespace AppliCan
                     Session["Data"] = usernamehide.Value;
                         //where to redirect?
                         //Response.Redirect("~/LoginPage.aspx");
-                        //Response.Redirect("MainPage.aspx");
+                    Response.Redirect("MainPage.aspx");
                 }
 
             }

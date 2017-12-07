@@ -13,7 +13,7 @@
         <br />
         <br />
         <label><b>Password</b></label> &nbsp; &nbsp; <br />
-        <asp:TextBox ID="PasswordTextBox" runat="server" Width="189px"></asp:TextBox>
+        <asp:TextBox ID="PasswordTextBox" runat="server" Width="189px" TextMode="Password"></asp:TextBox>
         <br />
         <br />
             <asp:Button ID="LoginButton" runat="server" Text="Login" Width="133px" OnClick="LoginButton_Click" Font-Bold="true" BackColor="#8BCCA4" />
