@@ -11,9 +11,13 @@ namespace AppliCan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (IsPostBack)
             {
-               // JobTCompN.Text = "YOOOOOOO";
+                if (usernamehide.Value == null)
+                {
+                    ErrorPanel.Visible = false;
+                    Hide.Visible = true;
+                }
             }
         }
 

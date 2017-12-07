@@ -24,7 +24,8 @@
 <body onload ="">
     <form id="form1" runat="server">
         <asp:HiddenField ID="usernamehide" runat="server" />
-    <div>
+        <asp:Panel ID="Hide" runat="server">
+        <div>
         <div>
             <asp:Label ID="CreateNewLabel" runat="server" Text="Create New Entry"></asp:Label>
         </div>
@@ -222,6 +223,7 @@
             </script>
         </div>
     </div>
+            </asp:Panel>
         <asp:Panel ID="ErrorPanel" runat="server" Visible="False">
             <div align="center">
                 <asp:Label ID="PageNotFoundLabel" runat="server" Text="Page Not Found"></asp:Label>

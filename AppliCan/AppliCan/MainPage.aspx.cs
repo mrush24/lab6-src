@@ -21,7 +21,8 @@ namespace AppliCan
             {
                if (usernamehidden.Value == null)
                 {
-
+                    ErrorPanel.Visible = false;
+                    Hide.Visible = true;
                 }
                else
                 {

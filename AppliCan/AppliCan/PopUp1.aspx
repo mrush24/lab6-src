@@ -6,9 +6,25 @@
 <head runat="server">
 	<title>Entry Details</title>
 	</head>
-
+    <script type="text/javascript">
+        function loadingname() {
+            var user = '<%=Session["Data"]%>'
+            var userhide = document.getElementById('<%= usernamehide.ClientID%>').value
+            userhide.value = user
+            var post = isPosted()
+            if (post == 'False') {
+                document.forms[0].submit()
+            }
+        }
+        function isPosted() {
+            var ret = '<%= Page.IsPostBack%>'
+            return ret
+        }
+    </script>
 <body onload ="">
 	<form id="form1" runat="server">
+        <asp:HiddenField ID="usernamehide" runat="server" />
+        <asp:Panel ID="Hide" runat="server">
     <div>
 			<div><h2>Entry Details</h2></div>
             <br />
@@ -132,7 +148,7 @@
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <asp:Button ID="RemoveButton" runat="server" Text="Remove" />
         </div>
-
+        </asp:Panel>
         <asp:Panel ID="ErrorPanel" runat="server" Visible="False">
             <div align="center">
                 <asp:Label ID="PageNotFoundLabel" runat="server" Text="Page Not Found"></asp:Label>

@@ -7,6 +7,14 @@ namespace AppliCan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                if (usernamehide.Value == null)
+                {
+                    ErrorPanel.Visible = false;
+                    Hide.Visible = true;
+                }
+            }
             using (applicanEntities ae = new applicanEntities())
             {
                 var entry = new AppliCanEntry();
