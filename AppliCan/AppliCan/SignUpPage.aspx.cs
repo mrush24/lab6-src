@@ -39,5 +39,10 @@ namespace AppliCan
             }
             
         }
+
+        protected void LoginHereButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/LoginPage.aspx");
+        }
     }
 }

@@ -27,6 +27,7 @@ namespace AppliCan
                 DateAppliedHere.Text = entry.HasApplied;
                 PositionNotesHere.Text = entry.PositionNotes;
                 CompanyNotesHere.Text = entry.CompanyNotes;
+                ContactInfoHere.Text = entry.ContactInfo;
                 if (entry.HasApplied == "Yes")
                 {
                     AppliedPanel.Visible = true;
@@ -43,11 +44,15 @@ namespace AppliCan
                             OfferNotesHere.Text = entry.OfferNotes;
                             DateOfferGivenHere.Text = entry.DateOfferGiven + "";
                             DateOfferDeadlineHere.Text = entry.DateOfferDeadline + "";
-                            ContactInfoHere.Text = entry.ContactInfo;
                         }
                     }
                 }
             }
+        }
+
+        protected void EditButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/EditPage.aspx");
         }
     }
     

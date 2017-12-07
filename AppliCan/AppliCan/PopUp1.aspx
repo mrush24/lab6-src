@@ -4,13 +4,13 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-	<title>Edit Entry</title>
+	<title>Entry Details</title>
 	</head>
 
 <body onload ="">
 	<form id="form1" runat="server">
     <div>
-			<div><h2>Edit Entry</h2></div>
+			<div><h2>Entry Details</h2></div>
             <br />
 			<hr />
             <br />
@@ -124,6 +124,25 @@
 			</tr>
                </table>
 			</div>
+        <br />
+        <hr />
+        <br />
+        <div align="center">
+            <asp:Button ID="EditButton" runat="server" Text="Edit" onClick="EditButton_Click"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="RemoveButton" runat="server" Text="Remove" />
+        </div>
+
+        <asp:Panel ID="ErrorPanel" runat="server" Visible="False">
+            <div align="center">
+                <asp:Label ID="PageNotFoundLabel" runat="server" Text="Page Not Found"></asp:Label>
+                <br />
+                <br />
+                <hr />
+                <br />
+                <asp:Button ID="ReturnButton" runat="server" Text="Return To Start Page" onClick="ReturnButton_Click" Font-Bold="True"/>
+            </div>
+        </asp:Panel>
 	</form>
 			
 </body>
