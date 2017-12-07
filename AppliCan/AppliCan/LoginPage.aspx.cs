@@ -25,11 +25,11 @@ namespace AppliCan
             {
                 string user = UserNameTextBox.Text;
                 string pass = PasswordTextBox.Text;
-                var userExists = ae.AppliCanAccounts.SingleOrDefault(acc => acc.Username == user);
-                if (userExists != null)
+                var userfound = ae.AppliCanAccounts.Find(user);
+                if (userfound != null)
                 {
-                    bool passExists = ae.AppliCanAccounts.Any(Password => Password.Equals(pass));
-                    if (passExists)
+                   var passExists = userfound.Password;
+                   if (pass == passExists)
                     {
                         //go to mainpage with hidden field of username
                         usernamehide.Value = user;
@@ -37,6 +37,17 @@ namespace AppliCan
 
                         Response.Redirect("MainPage.aspx");
                     }
+                     else
+                    {
+                        string script = "alert('Incorrect password.')";
+                        ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script, true);
+
+                    }
+                } else
+                {
+                    string script = "alert('Username does not exist.')";
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script, true);
+
                 }
 
             }

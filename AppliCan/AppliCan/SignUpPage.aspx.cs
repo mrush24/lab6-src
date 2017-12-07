@@ -33,7 +33,12 @@ namespace AppliCan
                     Session["Data"] = usernamehide.Value;
                         //where to redirect?
                         //Response.Redirect("~/LoginPage.aspx");
-                        //Response.Redirect("MainPage.aspx");
+                    Response.Redirect("MainPage.aspx");
+                }
+                else
+                {
+                    string script = "alert('Username already taken.')";
+                    ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script, true);
                 }
 
             }
