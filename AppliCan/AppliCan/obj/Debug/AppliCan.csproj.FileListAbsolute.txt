@@ -329,7 +329,6 @@ W:\My Documents\lab6-src\AppliCan\AppliCan\bin\roslyn\vbc.exe.config
 W:\My Documents\lab6-src\AppliCan\AppliCan\bin\roslyn\vbc.rsp
 W:\My Documents\lab6-src\AppliCan\AppliCan\bin\roslyn\VBCSCompiler.exe
 W:\My Documents\lab6-src\AppliCan\AppliCan\bin\roslyn\VBCSCompiler.exe.config
-W:\My Documents\lab6-src\AppliCan\AppliCan\bin\AppliCan.dll.config
 W:\My Documents\lab6-src\AppliCan\AppliCan\bin\AppliCan.dll
 W:\My Documents\lab6-src\AppliCan\AppliCan\bin\AppliCan.pdb
 W:\My Documents\lab6-src\AppliCan\AppliCan\bin\Antlr3.Runtime.dll
