@@ -14,26 +14,33 @@ namespace AppliCan
                 JobTitleHere.Text = entry.JobTitle;
                 CompanyNameHere.Text = entry.CompanyName;
                 //Check what type this is
-                FavoriteHere.Text = entry.Favorite;
+                if (entry.Favorite == 0)
+                {
+                    FavoriteHere.Text = "No";
+                }
+                else if (entry.Favorite == 1)
+                {
+                    FavoriteHere.Text = "Yes";
+                }
                 LocationHere.Text = entry.Location;
-                DateAppClosesHere.Text = entry.DateAppCloses;
+                DateAppClosesHere.Text = entry.DateAppCloses + "";
                 DateAppliedHere.Text = entry.HasApplied;
                 PositionNotesHere.Text = entry.PositionNotes;
                 CompanyNotesHere.Text = entry.CompanyNotes;
                 if (entry.HasApplied == "Yes")
                 {
-                    DateAppliedCalendar.SelectedDate = entry.DateApplied;
-                    AskedInterviewDropDownList.SelectedValue = entry.HasInterview;
+                    DateAppliedHere.Text = entry.DateApplied + "";
+                    HasInterviewHere.Text = entry.HasInterview;
                     if (entry.HasInterview == "Yes")
                     {
-                        entry.DateInterview = InterviewDateCalendar.SelectedDate;
-                        entry.HasOffer = OfferDropDownList.SelectedValue;
+                        DateInterviewHere.Text = entry.DateInterview + "";
+                        HasOfferHere.Text = entry.HasOffer;
                         if (entry.HasOffer == "Yes")
                         {
-                            OfferNotes.Text = entry.OfferNotes;
-                            DateOfferGiven.text = entry.DateOfferGiven;
-                            DateOfferDeadline.text = entry.DateOfferDeadline;
-                            ContactInfo.Text = entry.ContactInfo;
+                            OfferNotesHere.Text = entry.OfferNotes;
+                            DateOfferGivenHere.Text = entry.DateOfferGiven + "";
+                            DateOfferDeadlineHere.Text = entry.DateOfferDeadline + "";
+                            ContactInfoHere.Text = entry.ContactInfo;
                         }
                     }
                 }
