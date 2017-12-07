@@ -9,7 +9,7 @@
     </asp:ContentPlaceHolder>
     <style type="text/css">
         .auto-style2 {
-            width: 200;
+            /*width: 200;*/
             height: 200px;
         }
     </style>
