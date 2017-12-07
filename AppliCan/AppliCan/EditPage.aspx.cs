@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +11,14 @@ namespace AppliCan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                if (usernamehidden.Value == null)
+                {
+                    ErrorPanel.Visible = false;
+                    Hide.Visible = true;
+                }
+            }
             using (applicanEntities ae = new applicanEntities())
             {
                 var entry = new AppliCanEntry();
@@ -56,6 +64,51 @@ namespace AppliCan
                     }
                 }
             }
+        }
+
+        protected void SaveButton_Click(object sender, EventArgs e)
+        {
+            using (applicanEntities ae = new applicanEntities())
+            {
+                var entry = new AppliCanEntry();
+                //entry.AccountUser = textbox.text;
+                entry.JobTitle = JobTitleTextBox.Text;
+                entry.CompanyName = CompanyNameTextBox.Text;
+                //Check what type this is
+                if (FavCheckBox.Checked)
+                {
+                    entry.Favorite = 1;
+                }
+                else
+                {
+                    entry.Favorite = 0;
+                }
+                entry.Location = CountryDropDownList.SelectedValue + ", " + StateDropDownList.SelectedValue;
+                entry.HasApplied = AppliedDDL.SelectedValue;
+                entry.DateAppCloses = DateAppClosesCalendar.SelectedDate;
+                entry.PositionNotes = NotesPositionTextBox.Text;
+                entry.CompanyNotes = NotesCompTextBox.Text;
+                if (entry.HasApplied == "Yes")
+                {
+                    entry.DateApplied = DateAppliedCalendar.SelectedDate;
+                    entry.HasInterview = AskedInterviewDropDownList.SelectedValue;
+                    if (entry.HasInterview == "Yes")
+                    {
+                        entry.DateInterview = InterviewDateCalendar.SelectedDate;
+                        entry.HasOffer = OfferDropDownList.SelectedValue;
+                        if (entry.HasOffer == "Yes")
+                        {
+                            entry.OfferNotes = OfferInfoTextBox.Text;
+                            entry.DateOfferGiven = OfferGivenCalendar.SelectedDate;
+                            entry.DateOfferDeadline = OfferDeadlineCalendar.SelectedDate;
+                            entry.ContactInfo = ContactTextBox.Text;
+                        }
+                    }
+                }
+                entry.Enabled = 1;
+            }
+            Session["ID"] = IDhidden.Value;
+            Session["Data"] = usernamehidden.Value;
         }
     }
 }
