@@ -74,7 +74,7 @@
                     <br />
                     <div>
                         <asp:Label ID="DateAppClosesLabel" runat="server" Text="Date Application Closes:"></asp:Label>
-                        <asp:Calendar ID="DateAppClosesCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                        <asp:Calendar ID="DateAppClosesCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" OnSelectionChanged="DateAppClosesCalendar_SelectionChanged">
                             <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                             <NextPrevStyle VerticalAlign="Bottom" />
                             <OtherMonthDayStyle ForeColor="#808080" />
@@ -139,7 +139,7 @@
                     <asp:Panel ID="InterviewPanel" runat="server" Visible="False">
                         <div>
                            <asp:Label ID="InterviewDateLabel" runat="server" Text="Interview Date:"></asp:Label>
-                            <asp:Calendar ID="InterviewDateCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                            <asp:Calendar ID="InterviewDateCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px" ShowGridLines="True">
                                 <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
                                 <NextPrevStyle VerticalAlign="Bottom" />
                                 <OtherMonthDayStyle ForeColor="#808080" />
@@ -211,8 +211,8 @@
         
         <br />
         <div>
-            <asp:Button ID="CreateButton" runat="server" Text="CREATE" Height="40px" Width="94px" OnClick="CreateButton_Click" />
-            <asp:Button ID="PopUp" runat="server" Text="PopUp" OnClientClick="popuppp()" />	
+            <asp:Button ID="CreateButton" runat="server" Text="CREATE" Height="40px" Width="94px" OnClick="CreateButton_Click" BackColor="#8BCCA4" />
+            <asp:Button ID="PopUp" runat="server" Text="PopUp" OnClientClick="popuppp()" BackColor="#8BCCA4" />	
             <script type="text/javascript">
                 function popuppp() {
                     var popup = window.open("PopUp1.aspx", "PopupExample", "scrollbars=yes,resizable=1,height=1000,width=1000");
@@ -229,7 +229,7 @@
                 <br />
                 <hr />
                 <br />
-                <asp:Button ID="ReturnButton" runat="server" Text="Return To Start Page" onClick="ReturnButton_Click" Font-Bold="True"/>
+                <asp:Button ID="ReturnButton" runat="server" Text="Return To Start Page" onClick="ReturnButton_Click" Font-Bold="True" BackColor="#8BCCA4"/>
             </div>
         </asp:Panel>
     </form>

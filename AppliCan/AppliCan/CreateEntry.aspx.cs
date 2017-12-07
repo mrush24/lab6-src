@@ -110,5 +110,10 @@ namespace AppliCan
                 entry.Enabled = 1;
             }
         }
+
+        protected void DateAppClosesCalendar_SelectionChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

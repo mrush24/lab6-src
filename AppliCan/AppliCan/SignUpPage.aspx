@@ -23,7 +23,7 @@
     </div>
     <br />
     <div align="center">
-        <asp:Button ID="SignMeUpButton" runat="server" Text="Sign me up!" Font-Bold="True" onClick="SignMeUpButton_Click"/>
+        <asp:Button ID="SignMeUpButton" runat="server" Text="Sign me up!" Font-Bold="True" onClick="SignMeUpButton_Click" BackColor="#8BCCA4"/>
     </div>
     <br />
     <br />
@@ -34,7 +34,7 @@
         <asp:Label ID="AlreadyLabel" runat="server" Text="Already have an account?"></asp:Label>
         <br />
         <br />
-        <asp:Button ID="LoginHereButton" runat="server" Text="Login Here!" Font-Bold="True" onClick="LoginHereButton_Click" />
+        <asp:Button ID="LoginHereButton" runat="server" Text="Login Here!" Font-Bold="True" onClick="LoginHereButton_Click" BackColor="#8BCCA4" />
     </div>
 </asp:Content>
 

@@ -9,8 +9,12 @@
     </asp:ContentPlaceHolder>
     <style type="text/css">
         .auto-style2 {
-            width: 200;
-            height: 200px;
+            width: 343px;
+            height: 56px;
+        }
+        .auto-style3 {
+            width: 115px;
+            height: 65px;
         }
     </style>
 </head>
@@ -19,7 +23,7 @@
         <div>
             <div>
                 <%--<h1><asp:Label ID="Label2" runat="server" Text="AppliCan" Font-Bold="True" Font-Italic="True" Font-Names="French Script MT" Font-Size="XX-Large"></asp:Label></h1>--%>
-            <img alt="logo" class="auto-style2" longdesc="kdkd" src="Images/applicanlogogogogoo.png" /><br />    
+                <img alt="logos" class="auto-style3" longdesc="logisi" src="Images/jusdalogo.png" /><img alt="logo" class="auto-style2" longdesc="kdkd" src="Images/just da name.png" /><br />    
             </div>
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
