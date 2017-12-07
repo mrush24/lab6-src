@@ -39,7 +39,7 @@ namespace AppliCan
                         {
                             OfferNotesHere.Text = entry.OfferNotes;
                             DateOfferGivenHere.Text = entry.DateOfferGiven + "";
-                            DateOfferDeadlineHere.Text = entry.DateOfferDeadline;
+                            DateOfferDeadlineHere.Text = entry.DateOfferDeadline + "";
                             ContactInfoHere.Text = entry.ContactInfo;
                         }
                     }
