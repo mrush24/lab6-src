@@ -1,8 +1,6 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CreateEntry.aspx.cs" Inherits="AppliCan.CreateEntry" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateEntry.aspx.cs" Inherits="AppliCan.CreateEntry" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<asp:Content ID="ContentCreate" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <head runat="server">
     <title>Create New Entry</title>
     </head>
@@ -21,13 +19,12 @@
             return ret
         }
     </script>
-<body onload ="">
+
+<body>
     <form id="form1" runat="server">
         <asp:HiddenField ID="usernamehide" runat="server" />
     <div>
-        <div>
-            <asp:Label ID="CreateNewLabel" runat="server" Text="Create New Entry"></asp:Label>
-        </div>
+            <h2>Create New Entry</h2>
         <br />
         <hr />
         <br />
@@ -38,9 +35,8 @@
                         <asp:Label ID="JobTitleLabel" runat="server" Text="Job Title:"></asp:Label>
                         &nbsp;
                         <asp:TextBox ID="JobTitleTextBox" runat="server" Width="200px"></asp:TextBox>
-                        &nbsp;&nbsp;
-                        <asp:Label ID="CompanyNameLabel" runat="server" Text="Company Name:"></asp:Label>
-                        &nbsp;
+                        &nbsp;<br />
+                        Company Name:&nbsp;
                         <asp:TextBox ID="CompanyNameTextBox" runat="server" Width="200px"></asp:TextBox>
                     </div>
                     <br />
@@ -211,8 +207,8 @@
         
         <br />
         <div>
-            <asp:Button ID="CreateButton" runat="server" Text="CREATE" Height="40px" Width="94px" OnClick="CreateButton_Click" BackColor="#8BCCA4" />
-            <asp:Button ID="PopUp" runat="server" Text="PopUp" OnClientClick="popuppp()" BackColor="#8BCCA4" />	
+            <asp:Button ID="CreateButton" runat="server" Text="CREATE" Height="40px" Width="94px" OnClick="CreateButton_Click" BackColor="#8BCCA4" Font-Bold="True" />
+            <asp:Button ID="PopUp" runat="server" Text="PopUp" OnClientClick="popuppp()" BackColor="#8BCCA4" Font-Bold="True" />	
             <script type="text/javascript">
                 function popuppp() {
                     var popup = window.open("PopUp1.aspx", "PopupExample", "scrollbars=yes,resizable=1,height=1000,width=1000");
@@ -234,4 +230,4 @@
         </asp:Panel>
     </form>
 </body>
-</html>
+</asp:Content>
