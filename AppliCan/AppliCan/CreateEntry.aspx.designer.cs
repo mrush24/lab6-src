@@ -148,6 +148,24 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.DropDownList AppliedDDL;
         
         /// <summary>
+        /// DateAppClosesLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DateAppClosesLabel;
+        
+        /// <summary>
+        /// DateAppClosesCalendar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar DateAppClosesCalendar;
+        
+        /// <summary>
         /// AppliedPanel control.
         /// </summary>
         /// <remarks>
@@ -173,24 +191,6 @@ namespace AppliCan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar DateAppliedCalendar;
-        
-        /// <summary>
-        /// DateAppClosesLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DateAppClosesLabel;
-        
-        /// <summary>
-        /// DateAppClosesCalendar control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar DateAppClosesCalendar;
         
         /// <summary>
         /// NotesPositionLabel control.

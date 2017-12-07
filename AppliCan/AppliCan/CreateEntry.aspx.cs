@@ -75,5 +75,41 @@ namespace AppliCan
         {
             Response.Redirect("~/DefaultPage.aspx");
         }
+
+        protected void CreateButton_Click(object sender, EventArgs e)
+        {
+            using (applicanEntities ae = new applicanEntities())
+            {
+                var entry = ae.AppliCanEntries.;
+                //entry.AccountUser = textbox.text;
+                entry.JobTitle = JobTitleTextBox.Text;
+                entry.CompanyName = CompanyNameTextBox.Text;
+                //Check what type this is
+                entry.Favorite = FavCheckBox.Checked;
+                entry.Location = CountryDropDownList.SelectedValue + " " + StateDropDownList.SelectedValue + " " + CityDropDownList;
+                entry.HasApplied = AppliedDDL.SelectedValue;
+                entry.DateAppCloses = DateAppClosesCalendar.SelectedDate;
+                entry.PositionNotes = NotesPositionTextBox.Text;
+                entry.CompanyNotes = NotesCompTextBox.Text;
+                if (entry.HasApplied == "Yes")
+                {
+                    entry.DateApplied = DateAppliedCalendar.SelectedDate;
+                    entry.HasInterview = AskedInterviewDropDownList.SelectedValue;
+                    if (entry.HasInterview == "Yes")
+                    {
+                        entry.DateInterview = InterviewDateCalendar.SelectedDate;
+                        entry.HasOffer = OfferDropDownList.SelectedValue;
+                        if (entry.HasOffer == "Yes")
+                        {
+                            entry.OfferNotes = OfferInfoTextBox.Text;
+                            entry.DateOfferGiven = OfferGivenCalendar.SelectedDate;
+                            entry.DateOfferDeadline = OfferDeadlineCalendar.SelectedDate;
+                            entry.ContactInfo = ContactTextBox.Text;
+                        }
+                    }
+                }
+                //entry.enabled = 0;
+            }
+        }
     }
 }

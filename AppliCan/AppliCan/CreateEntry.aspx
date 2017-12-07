@@ -76,6 +76,20 @@
                         </asp:DropDownList>
                     </div>
                     <br />
+                    <div>
+                        <asp:Label ID="DateAppClosesLabel" runat="server" Text="Date Application Closes:"></asp:Label>
+                        <asp:Calendar ID="DateAppClosesCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
+                            <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
+                            <NextPrevStyle VerticalAlign="Bottom" />
+                            <OtherMonthDayStyle ForeColor="#808080" />
+                            <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
+                            <SelectorStyle BackColor="#CCCCCC" />
+                            <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
+                            <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
+                            <WeekendDayStyle BackColor="#FFFFCC" />
+                        </asp:Calendar>
+                    </div>
+                    <br />
                     <asp:Panel ID="AppliedPanel" runat="server" Visible="False">
                         <div>
                             <asp:Label ID="DateAppliedLabel" runat="server" Text="Date Applied:"></asp:Label>
@@ -90,20 +104,6 @@
                                 <WeekendDayStyle BackColor="#FFFFCC" />
                             </asp:Calendar>
            
-                        </div>
-                        <br />
-                        <div>
-                            <asp:Label ID="DateAppClosesLabel" runat="server" Text="Date Application Closes:"></asp:Label>
-                            <asp:Calendar ID="DateAppClosesCalendar" runat="server" BackColor="White" BorderColor="#999999" CellPadding="4" DayNameFormat="Shortest" Font-Names="Verdana" Font-Size="8pt" ForeColor="Black" Height="180px" Width="200px">
-                                <DayHeaderStyle BackColor="#CCCCCC" Font-Bold="True" Font-Size="7pt" />
-                                <NextPrevStyle VerticalAlign="Bottom" />
-                                <OtherMonthDayStyle ForeColor="#808080" />
-                                <SelectedDayStyle BackColor="#666666" Font-Bold="True" ForeColor="White" />
-                                <SelectorStyle BackColor="#CCCCCC" />
-                                <TitleStyle BackColor="#999999" BorderColor="Black" Font-Bold="True" />
-                                <TodayDayStyle BackColor="#CCCCCC" ForeColor="Black" />
-                                <WeekendDayStyle BackColor="#FFFFCC" />
-                            </asp:Calendar>
                         </div>
                         <br />
                         <br />
@@ -215,7 +215,7 @@
         
         <br />
         <div>
-            <asp:Button ID="CreateButton" runat="server" Text="CREATE" Height="40px" Width="94px" />
+            <asp:Button ID="CreateButton" runat="server" Text="CREATE" Height="40px" Width="94px" OnClick="CreateButton_Click" />
             <asp:Button ID="PopUp" runat="server" Text="PopUp" OnClientClick="popuppp()" />	
             <script type="text/javascript">
                 function popuppp() {
