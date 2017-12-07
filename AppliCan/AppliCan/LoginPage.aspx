@@ -17,10 +17,9 @@
         <br />
         <br />
             <asp:Button ID="LoginButton" runat="server" Text="Login" Width="133px" OnClick="LoginButton_Click" Font-Bold="true" BackColor="#8BCCA4" />
-    <p>
-            <asp:Button ID="Button1" runat="server" Text="Create Account" OnClick="CreateAccount_Click" Font-Bold="true" BackColor="#8BCCA4" />
-            </p>
-            <asp:CheckBox ID="RememberMe" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="     Remember me" /> <br /><br />
+            <br /> <br />
+            <asp:Button ID="Button1" runat="server" Text="Create Account" OnClick="CreateAccount_Click" Font-Bold="true" BackColor="#8BCCA4" /> <br /> <br />
+            <asp:CheckBox ID="RememberMe" runat="server" OnCheckedChanged="CheckBox1_CheckedChanged" Text="     Remember me" /> <br />
             <span class="psw"><a href="#">Forgot password?</a></span>
     <p>
         &nbsp;</p>

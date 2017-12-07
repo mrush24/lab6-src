@@ -18,15 +18,15 @@
          </div>
    <br />
     <div align="center">
-        <asp:Label ID="UsernameLabel" runat="server" Text="Username:"></asp:Label>
+        <label><b>Username</b></label> <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="UsernameTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="UsernameTextBox" runat="server" Width="188px"></asp:TextBox>
     </div>
     <br />
     <div align="center">
-        <asp:Label ID="PasswordLabel" runat="server" Text="Password:"></asp:Label>
+        <label><b>Password</b></label> <br />
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <asp:TextBox ID="PasswordTextBox" runat="server"></asp:TextBox>
+        <asp:TextBox ID="PasswordTextBox" runat="server" Width="189px"></asp:TextBox>
     </div>
     <br />
     <div align="center">
@@ -34,21 +34,11 @@
     </div>
     <br />
     <br />
-    <br />
-    <br />
     <div align="center">
         <asp:Label ID="AlreadyLabel" runat="server" Text="Already have an account?"></asp:Label>
         <br />
         <br />
-<<<<<<< HEAD
         <asp:Button ID="LoginHereButton" runat="server" Text="Login Here" Font-Bold="True" onClick="LoginHereButton_Click" BackColor="#8BCCA4" />
-=======
-<<<<<<< HEAD
-        <asp:Button ID="LoginHereButton" runat="server" Text="Login Here!" Font-Bold="True" onClick="LoginHereButton_Click"/>
-=======
-        <asp:Button ID="LoginHereButton" runat="server" Text="Login Here!" Font-Bold="True" onClick="LoginHereButton_Click" />
->>>>>>> c4b86313396ed0f117e1a6bb207f56e04c7180cb
->>>>>>> 51c86c41151769b01b25c6b502586c028af4bd3b
     </div>
 </asp:Content>
 

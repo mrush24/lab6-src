@@ -18,8 +18,9 @@
             height: 65px;
 =======
             /*width: 200;*/
-            height: 200px;
->>>>>>> 51c86c41151769b01b25c6b502586c028af4bd3b
+            height: 76px;
+>>>>>>> 
+51c86c41151769b01b25c6b502586c028af4bd3b
         }
     </style>
 </head>
