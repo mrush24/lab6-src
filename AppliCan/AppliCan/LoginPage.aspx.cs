@@ -25,11 +25,12 @@ namespace AppliCan
             {
                 string user = UserNameTextBox.Text;
                 string pass = PasswordTextBox.Text;
-                var userExists = ae.AppliCanAccounts.SingleOrDefault(acc => acc.Username == user);
-                if (userExists != null)
+                //var userExists = ae.AppliCanAccounts.SingleOrDefault(acc => acc.Username == user);
+                var userfound = ae.AppliCanAccounts.Find(user);
+                if (userfound != null)
                 {
-                    var passExists = ae.AppliCanAccounts.SingleOrDefault(acc => acc.Password == pass);
-                    if (passExists != null)
+                    var passExists = userfound.Password;
+                    if (pass == passExists)
                     {
                         //go to mainpage with hidden field of username
                         usernamehide.Value = user;
