@@ -10,12 +10,12 @@ namespace AppliCan
 {
     public partial class MainPage : System.Web.UI.Page
     {
-        static string prevPage;
+        //static string prevPage;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
             {
-                prevPage = Request.UrlReferrer.AbsolutePath;
+              //  prevPage = Request.UrlReferrer.AbsolutePath;
             }
             if (IsPostBack)
             {
@@ -26,16 +26,16 @@ namespace AppliCan
                 }
                else
                 {
-                    if (prevPage.Contains("LoginPage"))
-                    {
+                    //if (prevPage.Contains("LoginPage"))
+                    //{
                         string query = "SELECT [JobTitle], [CompanyName], [HasApplied], [DateAppCloses], [DateInterview], [DateOfferDeadline] FROM [AppliCanEntries] WHERE([Enabled] = @Enabled)  AND [AccountUser] = '" + usernamehidden.Value + "'";
                         //AccountInfoSqlDataSource.SelectCommand = AccountInfoSqlDataSource.SelectCommand + " AND [AccountUser] = '"+ usernamehidden.Value + "'";
                         AccountInfoSqlDataSource.SelectCommand = query;
-                    }
-                    else
-                    {
+                    //}
+                    //else
+                    //{
 
-                    }
+                    //}
                 }
             }
         }
@@ -64,6 +64,11 @@ namespace AppliCan
            Response.Redirect("~/LoginPage.aspx");
            Session["Data"] = usernamehidden.Value;
 
+        }
+
+        protected void ReturnButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/DefaultPage.aspx");
         }
     }
 }

@@ -1,9 +1,7 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CreateEntry.aspx.cs" Inherits="AppliCan.CreateEntry" %>
 
 <asp:Content ID="ContentCreate" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-<head runat="server">
-    <title>Create New Entry</title>
-    </head>
+    <%--<title>Create New Entry</title>--%>
     <script type="text/javascript">
         function loadingname() {
             var user = '<%=Session["Data"]%>'
@@ -19,23 +17,24 @@
             return ret
         }
     </script>
-<<<<<<< HEAD
 
-<body>
-    <form id="form1" runat="server">
-        <asp:HiddenField ID="usernamehide" runat="server" />
+
+
+    
+        
     <div>
             <h2>Create New Entry</h2>
-=======
+
 <body onload ="loadingname();">
-    <form id="form1" runat="server">
+    <asp:HiddenField ID="HiddenField1" runat="server" />
+    
         <asp:HiddenField ID="usernamehide" runat="server" />
         <asp:Panel ID="Hide" runat="server">
         <div>
         <div>
             <asp:Label ID="CreateNewLabel" runat="server" Text="Create New Entry"></asp:Label>
         </div>
->>>>>>> Madeline
+
         <br />
         <hr />
         <br />
@@ -240,6 +239,6 @@
                 <asp:Button ID="ReturnButton" runat="server" Text="Return To Start Page" onClick="ReturnButton_Click" Font-Bold="True" BackColor="#8BCCA4"/>
             </div>
         </asp:Panel>
-    </form>
+    
 </body>
 </asp:Content>

@@ -63,6 +63,8 @@ namespace AppliCan
                         }
                     }
                 }
+                ae.AppliCanEntries.Add(entry);
+                ae.SaveChanges();
             }
         }
 

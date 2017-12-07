@@ -13,13 +13,13 @@ namespace AppliCan {
     public partial class CreateEntry {
         
         /// <summary>
-        /// form1 control.
+        /// HiddenField1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.WebControls.HiddenField HiddenField1;
         
         /// <summary>
         /// usernamehide control.
@@ -31,8 +31,6 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.HiddenField usernamehide;
         
         /// <summary>
-<<<<<<< HEAD
-=======
         /// Hide control.
         /// </summary>
         /// <remarks>
@@ -51,7 +49,6 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.Label CreateNewLabel;
         
         /// <summary>
->>>>>>> Madeline
         /// JobTitleLabel control.
         /// </summary>
         /// <remarks>
