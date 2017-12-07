@@ -103,15 +103,6 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.DropDownList StateDropDownList;
         
         /// <summary>
-        /// CityDropDownList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList CityDropDownList;
-        
-        /// <summary>
         /// FavLabel control.
         /// </summary>
         /// <remarks>
