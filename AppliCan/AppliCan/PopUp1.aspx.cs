@@ -9,7 +9,7 @@ namespace AppliCan
         {
             using (applicanEntities ae = new applicanEntities())
             {
-                var entry = ae.AppliCanEntries.;
+                var entry = new AppliCanEntry();
                 //entry.AccountUser = textbox.text;
                 JobTitleHere.Text = entry.JobTitle;
                 CompanyNameHere.Text = entry.CompanyName;
@@ -37,6 +37,7 @@ namespace AppliCan
                         }
                     }
                 }
+            }
         }
     }
     
