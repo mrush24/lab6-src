@@ -13,6 +13,15 @@ namespace AppliCan {
     public partial class MainPage {
         
         /// <summary>
+        /// LogoutButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button LogoutButton;
+        
+        /// <summary>
         /// usernamehidden control.
         /// </summary>
         /// <remarks>
@@ -20,6 +29,15 @@ namespace AppliCan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.HiddenField usernamehidden;
+        
+        /// <summary>
+        /// Hide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Hide;
         
         /// <summary>
         /// Label3 control.

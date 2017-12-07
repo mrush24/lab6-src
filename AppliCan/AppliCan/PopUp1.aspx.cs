@@ -7,6 +7,14 @@ namespace AppliCan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (IsPostBack)
+            {
+                if (usernamehide.Value == null)
+                {
+                    ErrorPanel.Visible = false;
+                    Hide.Visible = true;
+                }
+            }
             using (applicanEntities ae = new applicanEntities())
             {
                 var entry = new AppliCanEntry();
@@ -53,6 +61,20 @@ namespace AppliCan
         protected void EditButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/EditPage.aspx");
+            Session["ID"] = IDhidden.Value;
+            Session["Data"] = usernamehide.Value;
+        }
+
+        protected void RemoveButton_Click(object sender, EventArgs e)
+        {
+            using (applicanEntities ae = new applicanEntities())
+            {
+                var entry = new AppliCanEntry();
+                entry.Enabled = 0;
+            }
+            Response.Redirect("~/MainPage.aspx");
+            Session["ID"] = IDhidden.Value;
+            Session["Data"] = usernamehide.Value;
         }
     }
     

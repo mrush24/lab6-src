@@ -23,9 +23,12 @@
             return ret
         }
     </script>
-    <body onload="loadingname();" align="center">
+    <body>
+        <div align="right">
+            <asp:Button ID="LogoutButton" runat="server" Text="Logout" Font-Bold="True" Font-Size="Medium" Height="45px" Width="82px" OnClick="LogoutButton_Click" />
+        </div>
     <asp:HiddenField ID="usernamehidden" runat="server" />
-
+        <asp:Panel ID="Hide" runat="server">
     <div>
         
         <br />
@@ -68,7 +71,7 @@
     <br />
     <hr />
 
-
+            </asp:Panel>
         <asp:Panel ID="ErrorPanel" runat="server" Visible="False">
             <div align="center">
                 <asp:Label ID="PageNotFoundLabel" runat="server" Text="Page Not Found"></asp:Label>

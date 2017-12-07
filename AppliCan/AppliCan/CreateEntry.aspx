@@ -19,12 +19,23 @@
             return ret
         }
     </script>
+<<<<<<< HEAD
 
 <body>
     <form id="form1" runat="server">
         <asp:HiddenField ID="usernamehide" runat="server" />
     <div>
             <h2>Create New Entry</h2>
+=======
+<body onload ="loadingname();">
+    <form id="form1" runat="server">
+        <asp:HiddenField ID="usernamehide" runat="server" />
+        <asp:Panel ID="Hide" runat="server">
+        <div>
+        <div>
+            <asp:Label ID="CreateNewLabel" runat="server" Text="Create New Entry"></asp:Label>
+        </div>
+>>>>>>> Madeline
         <br />
         <hr />
         <br />
@@ -218,6 +229,7 @@
             </script>
         </div>
     </div>
+            </asp:Panel>
         <asp:Panel ID="ErrorPanel" runat="server" Visible="False">
             <div align="center">
                 <asp:Label ID="PageNotFoundLabel" runat="server" Text="Page Not Found"></asp:Label>

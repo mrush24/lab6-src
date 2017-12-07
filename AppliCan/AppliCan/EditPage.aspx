@@ -6,10 +6,31 @@
 <head runat="server">
     <title></title>
 </head>
-    <body onload ="">
+    <body onload ="loadingname();">
     <form id="form1" runat="server">
-        <asp:HiddenField ID="usernamehide" runat="server" />
-    <div>
+        <script type="text/javascript">
+            function loadingname() {
+                var user = '<%=Session["Data"]%>'
+            var userhide = document.getElementById('<%= usernamehidden.ClientID%>').value
+                userhide.value = user
+                var id = '<%=Session["ID"]%>'
+                var idhide = document.getElementById('<%= IDhidden.ClientID%>').value
+                idhide.value = id
+            var post = isPosted()
+            if (post == 'False') {
+                document.forms[0].submit()
+            }
+        }
+        function isPosted() {
+            var ret = '<%= Page.IsPostBack%>'
+            return ret
+        }
+       
+    </script>
+        <asp:HiddenField ID="usernamehidden" runat="server" />
+        <asp:HiddenField ID="IDhidden" runat="server" />
+        <asp:Panel ID="Hide" runat="server">
+        <div>
         <div>
             <asp:Label ID="EditEntryLabel" runat="server" Text="Edit Entry"></asp:Label>
         </div>
@@ -196,17 +217,10 @@
         
         <br />
         <div>
-            <asp:Button ID="CreateButton" runat="server" Text="CREATE" Height="40px" Width="94px" OnClick="CreateButton_Click" />
-            <asp:Button ID="PopUp" runat="server" Text="PopUp" OnClientClick="popuppp()" />	
-            <script type="text/javascript">
-                function popuppp() {
-                    var popup = window.open("PopUp1.aspx", "PopupExample", "scrollbars=yes,resizable=1,height=1000,width=1000");
-                    popup.moveTo(5, 5);
-                    popup.focus();
-                }
-            </script>
+            <asp:Button ID="SaveButton" runat="server" Text="SAVE" Height="40px" Width="94px" onClick="SaveButton_Click" />
         </div>
     </div>
+            </asp:Panel>
         <asp:Panel ID="ErrorPanel" runat="server" Visible="False">
             <div align="center">
                 <asp:Label ID="PageNotFoundLabel" runat="server" Text="Page Not Found"></asp:Label>

@@ -21,7 +21,8 @@ namespace AppliCan
             {
                if (usernamehidden.Value == null)
                 {
-
+                    ErrorPanel.Visible = false;
+                    Hide.Visible = true;
                 }
                else
                 {
@@ -57,6 +58,12 @@ namespace AppliCan
                 e.Row.ToolTip = "Click to see details.";
                 e.Row.Attributes["onclick"] = "ShowPopup('"+ usernamehidden.Value +"')";
             }
+        }
+       protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+           Response.Redirect("~/LoginPage.aspx");
+           Session["Data"] = usernamehidden.Value;
+
         }
     }
 }

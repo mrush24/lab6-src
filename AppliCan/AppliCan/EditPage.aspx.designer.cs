@@ -22,13 +22,31 @@ namespace AppliCan {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// usernamehide control.
+        /// usernamehidden control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField usernamehide;
+        protected global::System.Web.UI.WebControls.HiddenField usernamehidden;
+        
+        /// <summary>
+        /// IDhidden control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField IDhidden;
+        
+        /// <summary>
+        /// Hide control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Hide;
         
         /// <summary>
         /// EditEntryLabel control.
@@ -382,22 +400,13 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.Calendar OfferDeadlineCalendar;
         
         /// <summary>
-        /// CreateButton control.
+        /// SaveButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button CreateButton;
-        
-        /// <summary>
-        /// PopUp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PopUp;
+        protected global::System.Web.UI.WebControls.Button SaveButton;
         
         /// <summary>
         /// ErrorPanel control.

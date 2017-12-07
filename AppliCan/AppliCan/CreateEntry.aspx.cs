@@ -11,9 +11,13 @@ namespace AppliCan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!IsPostBack)
+            if (IsPostBack)
             {
-               // JobTCompN.Text = "YOOOOOOO";
+                if (usernamehide.Value == null)
+                {
+                    ErrorPanel.Visible = false;
+                    Hide.Visible = true;
+                }
             }
         }
 
@@ -109,6 +113,8 @@ namespace AppliCan
                 }
                 entry.Enabled = 1;
             }
+            Session["Data"] = usernamehide.Value;
+            Response.Redirect("~/MainPage.aspx");
         }
 
         protected void DateAppClosesCalendar_SelectionChanged(object sender, EventArgs e)

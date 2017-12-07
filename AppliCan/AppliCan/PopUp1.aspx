@@ -6,9 +6,29 @@
 <head runat="server">
 	<title>Edit Entry</title>
 	</head>
-
-<body onload ="">
+    <script type="text/javascript">
+        function loadingname() {
+            var user = '<%=Session["Data"]%>'
+            var userhide = document.getElementById('<%= usernamehide.ClientID%>').value
+            userhide.value = user
+            var id = '<%=Session["ID"]%>'
+            var idhide = document.getElementById('<%= IDhidden.ClientID%>').value
+            idhide.value = id
+            var post = isPosted()
+            if (post == 'False') {
+                document.forms[0].submit()
+            }
+        }
+        function isPosted() {
+            var ret = '<%= Page.IsPostBack%>'
+            return ret
+        }
+    </script>
+<body onload ="loadingname();">
 	<form id="form1" runat="server">
+        <asp:HiddenField ID="usernamehide" runat="server" />
+        <asp:HiddenField ID="IDhidden" runat="server" />
+        <asp:Panel ID="Hide" runat="server">
     <div>
 			<div><h2>Edit Entry</h2></div>
             <br />
@@ -119,6 +139,28 @@
 			</tr>
                </table>
 			</div>
+<<<<<<< HEAD
+=======
+        <br />
+        <hr />
+        <br />
+        <div align="center">
+            <asp:Button ID="EditButton" runat="server" Text="Edit" onClick="EditButton_Click"/>
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:Button ID="RemoveButton" runat="server" Text="Remove" onClick="RemoveButton_Click"/>
+        </div>
+        </asp:Panel>
+        <asp:Panel ID="ErrorPanel" runat="server" Visible="False">
+            <div align="center">
+                <asp:Label ID="PageNotFoundLabel" runat="server" Text="Page Not Found"></asp:Label>
+                <br />
+                <br />
+                <hr />
+                <br />
+                <asp:Button ID="ReturnButton" runat="server" Text="Return To Start Page" onClick="ReturnButton_Click" Font-Bold="True"/>
+            </div>
+        </asp:Panel>
+>>>>>>> Madeline
 	</form>
 			
 </body>
