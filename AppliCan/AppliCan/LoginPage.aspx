@@ -14,7 +14,8 @@
         <br />
             <asp:Button ID="LoginButton" runat="server" Text="Login" Width="100px" OnClick="LoginButton_Click" />
     <p>
-        &nbsp;</p>
+            <asp:Button ID="Button1" runat="server" Text="Create Account" OnClick="CreateAccount_Click" />
+            </p>
     <p>
         &nbsp;</p>
     </div>

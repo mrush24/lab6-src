@@ -14,6 +14,28 @@ namespace AppliCan
             
         }
 
+        protected void CreateAccount_Click(object sender, EventArgs e) {
+            using (applicanEntities ae = new applicanEntities())
+            {
+                string user = UserNameTextBox.Text;
+                string pass = PasswordTextBox.Text;
+                bool userExists = ae.AppliCanAccounts.Any(Username => Username.Equals(user));
+                if (userExists)
+                {
+                    bool passExists = ae.AppliCanAccounts.Any(Password => Password.Equals(pass));
+                    if (passExists)
+                    {
+                        //go to mainpage with hidden field of username
+                        usernamehide.Value = user;
+                        Session["Data"] = usernamehide.Value;
+
+                        Response.Redirect("SignUpPage.aspx");
+                    }
+                }
+
+            }
+        }
+
         protected void LoginButton_Click(object sender, EventArgs e)
         {
             using (applicanEntities ae = new applicanEntities())
