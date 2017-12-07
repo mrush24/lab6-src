@@ -31,15 +31,6 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.HiddenField usernamehide;
         
         /// <summary>
-        /// CreateNewLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CreateNewLabel;
-        
-        /// <summary>
         /// JobTitleLabel control.
         /// </summary>
         /// <remarks>
@@ -56,15 +47,6 @@ namespace AppliCan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox JobTitleTextBox;
-        
-        /// <summary>
-        /// CompanyNameLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label CompanyNameLabel;
         
         /// <summary>
         /// CompanyNameTextBox control.
