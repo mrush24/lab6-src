@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="applicanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="applicanModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AppliCanAccounts">
           <Key>
             <PropertyRef Name="ID" />
@@ -37,12 +37,30 @@
           <Property Name="CompanyNotes" Type="nvarchar(max)" />
           <Property Name="Enabled" Type="int" />
         </EntityType>
+        <EntityType Name="tblapplicanCountry">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="country" Type="varchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tblUsaStates">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="StateCode" Type="varchar" MaxLength="50" />
+          <Property Name="StateName" Type="varchar" MaxLength="50" />
+          <Property Name="IsRealState" Type="varchar" MaxLength="50" />
+          <Property Name="StateDate" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityContainer Name="applicanModelStoreContainer">
           <EntitySet Name="AppliCanAccounts" EntityType="Self.AppliCanAccounts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="AppliCanEntries" EntityType="Self.AppliCanEntries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblapplicanCountry" EntityType="Self.tblapplicanCountry" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tblUsaStates" EntityType="Self.tblUsaStates" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="applicanModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -81,7 +99,26 @@
         <EntityContainer Name="applicanEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AppliCanAccounts" EntityType="Self.AppliCanAccount" />
           <EntitySet Name="AppliCanEntries" EntityType="Self.AppliCanEntry" />
+          <EntitySet Name="tblapplicanCountries" EntityType="applicanModel.tblapplicanCountry" />
+          <EntitySet Name="tblUsaStates" EntityType="applicanModel.tblUsaState" />
         </EntityContainer>
+        <EntityType Name="tblapplicanCountry">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="country" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tblUsaState">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="StateCode" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StateName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="IsRealState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="StateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -119,6 +156,25 @@
                 <ScalarProperty Name="PositionNotes" ColumnName="PositionNotes" />
                 <ScalarProperty Name="CompanyNotes" ColumnName="CompanyNotes" />
                 <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblapplicanCountries">
+            <EntityTypeMapping TypeName="applicanModel.tblapplicanCountry">
+              <MappingFragment StoreEntitySet="tblapplicanCountry">
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tblUsaStates">
+            <EntityTypeMapping TypeName="applicanModel.tblUsaState">
+              <MappingFragment StoreEntitySet="tblUsaStates">
+                <ScalarProperty Name="StateDate" ColumnName="StateDate" />
+                <ScalarProperty Name="IsRealState" ColumnName="IsRealState" />
+                <ScalarProperty Name="StateName" ColumnName="StateName" />
+                <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

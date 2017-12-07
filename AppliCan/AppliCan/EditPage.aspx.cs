@@ -11,6 +11,13 @@ namespace AppliCan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                CountryDropDownList.AppendDataBoundItems = true;
+                CountryDropDownList.Items.Insert(0, new ListItem("--select--", "0"));
+                StateDropDownList.AppendDataBoundItems = true;
+                StateDropDownList.Items.Insert(0, new ListItem("--select--", "0"));
+            }
             if (IsPostBack)
             {
                 if (usernamehidden.Value != null)

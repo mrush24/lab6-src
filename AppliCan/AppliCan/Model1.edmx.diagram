@@ -7,6 +7,8 @@
       <Diagram DiagramId="a010668d62cb4d85a6d6dfcb6a6fc85d" Name="Diagram1">
         <EntityTypeShape EntityType="applicanModel.AppliCanAccount" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="applicanModel.AppliCanEntry" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="applicanModel.tblapplicanCountry" Width="1.5" PointX="5.375" PointY="0.75" />
+        <EntityTypeShape EntityType="applicanModel.tblUsaState" Width="1.5" PointX="5.375" PointY="2.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

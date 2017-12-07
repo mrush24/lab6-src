@@ -56,13 +56,19 @@
                     <div>
                         <asp:Label ID="LocationLabel" runat="server" Text="Location:"></asp:Label>
                         &nbsp;
-                        <asp:DropDownList ID="CountryDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CountryDropDownList_SelectedIndexChanged">
+                        <asp:DropDownList ID="CountryDropDownList" runat="server" AutoPostBack="True" OnSelectedIndexChanged="CountryDropDownList_SelectedIndexChanged" DataSourceID="CountrySqlDataSource" DataTextField="country" DataValueField="country">
                             
                         </asp:DropDownList>
+                        <asp:SqlDataSource ID="CountrySqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:applicanConnectionString %>" SelectCommand="SELECT [country] FROM [tblapplicanCountry]"></asp:SqlDataSource>
                         &nbsp;
-                        <asp:DropDownList ID="StateDropDownList" runat="server" Visible="False">
+                        <asp:DropDownList ID="StateDropDownList" runat="server" Visible="False" DataSourceID="StateSqlDataSource" DataTextField="StateName" DataValueField="StateCode">
                             
                         </asp:DropDownList>
+                        <asp:SqlDataSource ID="StateSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:applicanConnectionString %>" SelectCommand="SELECT [StateName] FROM [tblUsaStates] WHERE ([IsRealState] = @IsRealState)">
+                            <SelectParameters>
+                                <asp:Parameter DefaultValue="1" Name="IsRealState" Type="String" />
+                            </SelectParameters>
+                        </asp:SqlDataSource>
                     </div>
                     <br />
                     <div>

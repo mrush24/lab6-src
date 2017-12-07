@@ -61,8 +61,8 @@ namespace AppliCan
         }
        protected void LogoutButton_Click(object sender, EventArgs e)
         {
-           Response.Redirect("~/LoginPage.aspx");
-           Session["Data"] = null;
+            Session["Data"] = null;
+            Response.Redirect("~/LoginPage.aspx");
 
         }
 

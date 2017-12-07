@@ -11,6 +11,13 @@ namespace AppliCan
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                CountryDropDownList.AppendDataBoundItems = true;
+                CountryDropDownList.Items.Insert(0, new ListItem("--select--", "0"));
+                StateDropDownList.AppendDataBoundItems = true;
+                StateDropDownList.Items.Insert(0, new ListItem("--select--", "0"));
+            }
             if (IsPostBack)
             {
                 if (usernamehide.Value == null)
@@ -43,7 +50,10 @@ namespace AppliCan
 
         protected void CountryDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
-            StateDropDownList.Visible = true;
+            if (CountryDropDownList.SelectedValue == "USA")
+            {
+                StateDropDownList.Visible = true;
+            }
         }
 
         protected void AskedInterviewDropDownList_SelectedIndexChanged(object sender, EventArgs e)
@@ -89,7 +99,14 @@ namespace AppliCan
                 } else {
                     entry.Favorite = 0;
                 }
-                entry.Location = CountryDropDownList.SelectedValue + ", " + StateDropDownList.SelectedValue;
+                if (CountryDropDownList.SelectedValue == "USA")
+                {
+                    entry.Location = CountryDropDownList.SelectedValue + ", " + StateDropDownList.SelectedValue;
+                }
+                else
+                {
+                    entry.Location = CountryDropDownList.SelectedValue;
+                }
                 entry.HasApplied = AppliedDDL.SelectedValue;
                 entry.DateAppCloses = DateAppClosesCalendar.SelectedDate;
                 entry.PositionNotes = NotesPositionTextBox.Text;
