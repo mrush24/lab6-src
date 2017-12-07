@@ -34,7 +34,7 @@
         <asp:Label ID="AlreadyLabel" runat="server" Text="Already have an account?"></asp:Label>
         <br />
         <br />
-        <asp:Button ID="LoginHereButton" runat="server" Text="Login Here!" Font-Bold="True" OnClick="LoginHereButton_Click" />
+        <asp:Button ID="LoginHereButton" runat="server" Text="Login Here!" Font-Bold="True" onClick="LoginHereButton_Click" />
     </div>
 </asp:Content>
 
