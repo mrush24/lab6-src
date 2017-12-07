@@ -12,6 +12,13 @@
             height: 200px;
             width: 383px;
         }
+        .LoginButton {
+            padding: 14px 20px;
+            border-radius: inherit;
+        }
+        .SignupButton {
+            padding: 14px 20px
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -19,10 +26,9 @@
     <table style="width:100%; height:100%;">
         
         <td alight="center">
-            <asp:Button ID="LoginButton" runat="server" Text="Log In" width="201px" PostBackUrl="~/LoginPage.aspx" BackColor="#8BCCA4"/>
-            <br />
-            <br />
-            <asp:Button ID="SignupButton" runat="server" Text="Sign Up"  width="204px" PostBackUrl = "~/SignUpPage.aspx" BackColor="#8BCCA4"/>
+            <asp:Button class="LoginButton" runat="server" Text="Log In" width="201px" border-radius="12px" PostBackUrl="~/LoginPage.aspx" BackColor="#8BCCA4"/>
+            <br /><br />
+            <asp:Button class="SignupButton" runat="server" Text="Sign Up"  width="204px" PostBackUrl = "~/SignUpPage.aspx" BackColor="#8BCCA4"/>
         </td>
                  
     </table>
