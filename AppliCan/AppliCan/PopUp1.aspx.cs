@@ -61,7 +61,8 @@ namespace AppliCan
         protected void EditButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/EditPage.aspx");
-            Session["ID"] = usernamehidden.Value;
+            Session["ID"] = IDhidden.Value;
+            Session["Data"] = usernamehide.Value;
         }
 
         protected void RemoveButton_Click(object sender, EventArgs e)
@@ -71,7 +72,9 @@ namespace AppliCan
                 var entry = new AppliCanEntry();
                 entry.Enabled = 0;
             }
-            Response.Redirect(
+            Response.Redirect("~/MainPage.aspx");
+            Session["ID"] = IDhidden.Value;
+            Session["Data"] = usernamehide.Value;
         }
     }
     

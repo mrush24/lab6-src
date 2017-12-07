@@ -11,6 +11,9 @@
             var user = '<%=Session["Data"]%>'
             var userhide = document.getElementById('<%= usernamehide.ClientID%>').value
             userhide.value = user
+            var id = '<%=Session["ID"]%>'
+            var idhide = document.getElementById('<%= IDhidden.ClientID%>').value
+            idhide.value = id
             var post = isPosted()
             if (post == 'False') {
                 document.forms[0].submit()
@@ -21,9 +24,10 @@
             return ret
         }
     </script>
-<body onload ="">
+<body onload ="loadingname();">
 	<form id="form1" runat="server">
         <asp:HiddenField ID="usernamehide" runat="server" />
+        <asp:HiddenField ID="IDhidden" runat="server" />
         <asp:Panel ID="Hide" runat="server">
     <div>
 			<div><h2>Entry Details</h2></div>

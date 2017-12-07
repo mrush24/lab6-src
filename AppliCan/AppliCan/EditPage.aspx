@@ -6,9 +6,29 @@
 <head runat="server">
     <title></title>
 </head>
-    <body onload ="">
+    <body onload ="loadingname();">
     <form id="form1" runat="server">
-        <asp:HiddenField ID="usernamehide" runat="server" />
+        <script type="text/javascript">
+            function loadingname() {
+                var user = '<%=Session["Data"]%>'
+            var userhide = document.getElementById('<%= usernamehidden.ClientID%>').value
+                userhide.value = user
+                var id = '<%=Session["ID"]%>'
+                var idhide = document.getElementById('<%= IDhidden.ClientID%>').value
+                idhide.value = id
+            var post = isPosted()
+            if (post == 'False') {
+                document.forms[0].submit()
+            }
+        }
+        function isPosted() {
+            var ret = '<%= Page.IsPostBack%>'
+            return ret
+        }
+       
+    </script>
+        <asp:HiddenField ID="usernamehidden" runat="server" />
+        <asp:HiddenField ID="IDhidden" runat="server" />
         <asp:Panel ID="Hide" runat="server">
         <div>
         <div>

@@ -21,7 +21,7 @@
             return ret
         }
     </script>
-<body onload ="">
+<body onload ="loadingname();">
     <form id="form1" runat="server">
         <asp:HiddenField ID="usernamehide" runat="server" />
         <asp:Panel ID="Hide" runat="server">

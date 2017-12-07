@@ -113,6 +113,8 @@ namespace AppliCan
                 }
                 entry.Enabled = 1;
             }
+            Session["Data"] = usernamehide.Value;
+            Response.Redirect("~/MainPage.aspx");
         }
     }
 }

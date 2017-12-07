@@ -13,7 +13,7 @@ namespace AppliCan
         {
             if (IsPostBack)
             {
-                if (usernamehide.Value == null)
+                if (usernamehidden.Value == null)
                 {
                     ErrorPanel.Visible = false;
                     Hide.Visible = true;
@@ -107,7 +107,8 @@ namespace AppliCan
                 }
                 entry.Enabled = 1;
             }
-            Session["ID"] = usernamehidden.Value;
+            Session["ID"] = IDhidden.Value;
+            Session["Data"] = usernamehidden.Value;
         }
     }
 }
