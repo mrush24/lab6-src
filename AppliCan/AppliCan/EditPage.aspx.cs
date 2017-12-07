@@ -107,6 +107,7 @@ namespace AppliCan
                 }
                 entry.Enabled = 1;
             }
+            Session["ID"] = usernamehidden.Value;
         }
     }
 }

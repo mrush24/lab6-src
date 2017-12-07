@@ -61,6 +61,17 @@ namespace AppliCan
         protected void EditButton_Click(object sender, EventArgs e)
         {
             Response.Redirect("~/EditPage.aspx");
+            Session["ID"] = usernamehidden.Value;
+        }
+
+        protected void RemoveButton_Click(object sender, EventArgs e)
+        {
+            using (applicanEntities ae = new applicanEntities())
+            {
+                var entry = new AppliCanEntry();
+                entry.Enabled = 0;
+            }
+            Response.Redirect(
         }
     }
     

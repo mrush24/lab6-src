@@ -146,7 +146,7 @@
         <div align="center">
             <asp:Button ID="EditButton" runat="server" Text="Edit" onClick="EditButton_Click"/>
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <asp:Button ID="RemoveButton" runat="server" Text="Remove" />
+            <asp:Button ID="RemoveButton" runat="server" Text="Remove" onClick="RemoveButton_Click"/>
         </div>
         </asp:Panel>
         <asp:Panel ID="ErrorPanel" runat="server" Visible="False">

@@ -59,5 +59,11 @@ namespace AppliCan
                 e.Row.Attributes["onclick"] = "ShowPopup('"+ usernamehidden.Value +"')";
             }
         }
+       protected void LogoutButton_Click(object sender, EventArgs e)
+        {
+           Response.Redirect("~/LoginPage.aspx");
+           Session["Data"] = usernamehidden.Value;
+
+        }
     }
 }
