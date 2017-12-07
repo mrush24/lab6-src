@@ -10,7 +10,7 @@ namespace AppliCan.Controllers
     {
         public ActionResult Index()
         {
-            return Redirect("~/MainPage.aspx");
+            return Redirect("~/DefaultPage.aspx");
         }
 
         //public ActionResult About()

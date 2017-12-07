@@ -42,6 +42,11 @@ namespace AppliCan
             StateDropDownList.Visible = true;
         }
 
+        protected void StateDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            CityDropDownList.Visible = true;
+        }
+
         protected void AskedInterviewDropDownList_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (AskedInterviewDropDownList.SelectedValue == "Yes")
@@ -76,16 +81,13 @@ namespace AppliCan
             using (applicanEntities ae = new applicanEntities())
             {
                 var entry = new AppliCanEntry();
+
                 //entry.AccountUser = textbox.text;
                 entry.JobTitle = JobTitleTextBox.Text;
                 entry.CompanyName = CompanyNameTextBox.Text;
                 //Check what type this is
-                if (FavCheckBox.Checked) {
-                    entry.Favorite = 1;
-                } else {
-                    entry.Favorite = 0;
-                }
-                entry.Location = CountryDropDownList.SelectedValue + " " + StateDropDownList.SelectedValue;
+                entry.Favorite = FavCheckBox.Checked;
+                entry.Location = CountryDropDownList.SelectedValue + " " + StateDropDownList.SelectedValue + " " + CityDropDownList;
                 entry.HasApplied = AppliedDDL.SelectedValue;
                 entry.DateAppCloses = DateAppClosesCalendar.SelectedDate;
                 entry.PositionNotes = NotesPositionTextBox.Text;
@@ -107,7 +109,7 @@ namespace AppliCan
                         }
                     }
                 }
-                entry.enabled = 0;
+                //entry.enabled = 0;
             }
         }
     }
