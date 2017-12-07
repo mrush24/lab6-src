@@ -11,14 +11,17 @@
         <script type="text/javascript">
             function loadingname() {
                 var user = '<%=Session["Data"]%>'
-            var userhide = document.getElementById('<%= usernamehidden.ClientID%>').value
+            var userhide = document.getElementById('<%= usernamehidden.ClientID%>')
                 userhide.value = user
                 var id = '<%=Session["ID"]%>'
-                var idhide = document.getElementById('<%= IDhidden.ClientID%>').value
+                var idhide = document.getElementById('<%= IDhidden.ClientID%>')
                 idhide.value = id
             var post = isPosted()
             if (post == 'False') {
                 document.forms[0].submit()
+            }
+            if (post == 'True') {
+                document.focus();
             }
         }
         function isPosted() {

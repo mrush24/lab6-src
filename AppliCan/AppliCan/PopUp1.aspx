@@ -8,15 +8,21 @@
 	</head>
     <script type="text/javascript">
         function loadingname() {
-            var user = '<%=Session["Data"]%>'
-            var userhide = document.getElementById('<%= usernamehide.ClientID%>').value
-            userhide.value = user
-            var id = '<%=Session["ID"]%>'
-            var idhide = document.getElementById('<%= IDhidden.ClientID%>').value
-            idhide.value = id
-            var post = isPosted()
-            if (post == 'False') {
-                document.forms[0].submit()
+            if (document != null && !document.closed) {
+                var grid = window.opener.document.getElementById("AccountGridView")
+                var user = '<%=Session["Data"]%>'
+                var userhide = document.getElementById('<%= usernamehide.ClientID%>')
+                userhide.value = user
+              <%--  var id = '<%=Session["ID"]%>'--%>
+                var idhide = document.getElementById('<%= IDhidden.ClientID%>')
+                idhide.value = grid.getAttribute("onclick")
+                var post = isPosted()
+                if (post == 'False') {
+                    document.forms[0].submit()
+                }
+                if (post == 'True') {
+                    document.focus();
+                }
             }
         }
         function isPosted() {
@@ -73,11 +79,13 @@
                                 <asp:Label ID="DateAppClosesHere" runat="server"></asp:Label>
                             </div>
 						    <br />
+                    <asp:Panel ID="AppliedPanel" runat="server">
                             <div>
 				                <asp:Label ID="DateAppliedLabel" runat="server" Text="Date Applied:"></asp:Label>
 					            &nbsp;
                                 <asp:Label ID="DateAppliedHere" runat="server"></asp:Label>
 					        </div>
+                        </asp:Panel>
                             <br />
                             <div>
                                 <asp:Label ID="PositionNotesLabel" runat="server" Text="Notes about position:"></asp:Label>
@@ -105,12 +113,15 @@
                                 <asp:Label ID="HasInterviewHere" runat="server"></asp:Label>
                             </div>
                             <br />
+                            <asp:Panel ID="InterviewPanel" runat="server">
                             <div>
                                 <asp:Label ID="DateInterviewLabel" runat="server" Text="Interview Date:"></asp:Label>
                                 &nbsp
                                 <asp:Label ID="DateInterviewHere" runat="server"></asp:Label>
                             </div>
+                                </asp:Panel>
                             <br />
+                            <asp:Panel ID="OfferPanel" runat="server">
                             <div>
                                 <asp:Label ID="HasOfferLabel" runat="server" Text="Offer:"></asp:Label>
                                 &nbsp;
@@ -134,13 +145,14 @@
                                 &nbsp;
                                 <asp:Label ID="DateOfferDeadlineHere" runat="server"></asp:Label>
                             </div>
+                                </asp:Panel>
 				</td>
 				
 			</tr>
+                  
                </table>
 			</div>
-<<<<<<< HEAD
-=======
+
         <br />
         <hr />
         <br />
@@ -160,7 +172,7 @@
                 <asp:Button ID="ReturnButton" runat="server" Text="Return To Start Page" onClick="ReturnButton_Click" Font-Bold="True"/>
             </div>
         </asp:Panel>
->>>>>>> Madeline
+
 	</form>
 			
 </body>

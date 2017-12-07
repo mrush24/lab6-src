@@ -13,66 +13,75 @@ namespace AppliCan
         {
             if (IsPostBack)
             {
-                if (usernamehidden.Value == null)
+                if (usernamehidden.Value != null)
                 {
                     ErrorPanel.Visible = false;
                     Hide.Visible = true;
-                }
-            }
-            using (applicanEntities ae = new applicanEntities())
-            {
-                var entry = new AppliCanEntry();
-                JobTitleTextBox.Text = entry.JobTitle;
-                CompanyNameTextBox.Text = entry.CompanyName;
-                var location = entry.Location;
-                Char[] split = { ',', ' ' };
-                String[] country = location.Split(split);
-                CountryDropDownList.SelectedValue = country[0];
-                StateDropDownList.SelectedValue = country[2];
-                if (entry.Favorite == 0)
-                {
-                    FavCheckBox.Checked = false;
-                }
-                else if (entry.Favorite == 1)
-                {
-                    FavCheckBox.Checked = true;
-                }
-                AppliedDDL.SelectedValue = entry.HasApplied;
-                DateAppClosesCalendar.SelectedDate = (System.DateTime)entry.DateAppCloses;
-                NotesPositionTextBox.Text = entry.PositionNotes;
-                NotesCompTextBox.Text = entry.CompanyNotes;
-                ContactTextBox.Text = entry.ContactInfo;
-                if (entry.HasApplied == "Yes")
-                {
-                    AppliedPanel.Visible = true;
-                    MiddleAppliedPanel.Visible = true;
-                    DateAppliedCalendar.SelectedDate = (System.DateTime)entry.DateApplied;
-                    AskedInterviewDropDownList.SelectedValue = entry.HasInterview;
-                    if (entry.HasInterview == "Yes")
+
+                    using (applicanEntities ae = new applicanEntities())
                     {
-                        InterviewPanel.Visible = true;
-                        EntireRightColumnPanel.Visible = true;
-                        InterviewDateCalendar.SelectedDate = (System.DateTime)entry.DateInterview;
-                        OfferDropDownList.SelectedValue = entry.HasOffer;
-                        if (entry.HasOffer == "Yes")
+                        var num = Convert.ToInt32(IDhidden.Value);
+                        var entry = ae.AppliCanEntries.Find(num);
+                        JobTitleTextBox.Text = entry.JobTitle;
+                        CompanyNameTextBox.Text = entry.CompanyName;
+                        var location = entry.Location;
+                        Char[] split = { ',', ' ' };
+                        String[] country = location.Split(split);
+                        CountryDropDownList.SelectedValue = country[0];
+                        StateDropDownList.SelectedValue = country[2];
+                        if (entry.Favorite == 0)
                         {
-                            OfferPanel.Visible = true;
-                            OfferInfoTextBox.Text = entry.OfferNotes;
-                            OfferGivenCalendar.SelectedDate = (System.DateTime)entry.DateOfferGiven;
-                            OfferDeadlineCalendar.SelectedDate = (System.DateTime)entry.DateOfferDeadline;
+                            FavCheckBox.Checked = false;
                         }
+                        else if (entry.Favorite == 1)
+                        {
+                            FavCheckBox.Checked = true;
+                        }
+                        AppliedDDL.SelectedValue = entry.HasApplied;
+                        DateAppClosesCalendar.SelectedDate = (System.DateTime)entry.DateAppCloses;
+                        NotesPositionTextBox.Text = entry.PositionNotes;
+                        NotesCompTextBox.Text = entry.CompanyNotes;
+                        ContactTextBox.Text = entry.ContactInfo;
+                        if (entry.HasApplied == "Yes")
+                        {
+                            AppliedPanel.Visible = true;
+                            MiddleAppliedPanel.Visible = true;
+                            DateAppliedCalendar.SelectedDate = (System.DateTime)entry.DateApplied;
+                            AskedInterviewDropDownList.SelectedValue = entry.HasInterview;
+                            if (entry.HasInterview == "Yes")
+                            {
+                                InterviewPanel.Visible = true;
+                                EntireRightColumnPanel.Visible = true;
+                                InterviewDateCalendar.SelectedDate = (System.DateTime)entry.DateInterview;
+                                OfferDropDownList.SelectedValue = entry.HasOffer;
+                                if (entry.HasOffer == "Yes")
+                                {
+                                    OfferPanel.Visible = true;
+                                    OfferInfoTextBox.Text = entry.OfferNotes;
+                                    OfferGivenCalendar.SelectedDate = (System.DateTime)entry.DateOfferGiven;
+                                    OfferDeadlineCalendar.SelectedDate = (System.DateTime)entry.DateOfferDeadline;
+                                }
+                            }
+                        }
+                       // ae.AppliCanEntries.Add(entry);
+                       // ae.SaveChanges();
                     }
                 }
-                ae.AppliCanEntries.Add(entry);
-                ae.SaveChanges();
+                else
+                {
+                    ErrorPanel.Visible = true;
+                    Hide.Visible = false;
+                }
             }
+            
         }
 
         protected void SaveButton_Click(object sender, EventArgs e)
         {
             using (applicanEntities ae = new applicanEntities())
             {
-                var entry = new AppliCanEntry();
+                var num = Convert.ToInt32(IDhidden.Value);
+                var entry = ae.AppliCanEntries.Find(num);
                 //entry.AccountUser = textbox.text;
                 entry.JobTitle = JobTitleTextBox.Text;
                 entry.CompanyName = CompanyNameTextBox.Text;
@@ -108,9 +117,35 @@ namespace AppliCan
                     }
                 }
                 entry.Enabled = 1;
+                ae.SaveChanges();
             }
             Session["ID"] = IDhidden.Value;
             Session["Data"] = usernamehidden.Value;
+        }
+
+        protected void CountryDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void AppliedDDL_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void AskedInterviewDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void OfferDropDownList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ReturnButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

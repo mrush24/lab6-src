@@ -157,6 +157,33 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.Label DateAppClosesHere;
         
         /// <summary>
+        /// AppliedPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel AppliedPanel;
+        
+        /// <summary>
+        /// DateAppliedLabel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DateAppliedLabel;
+        
+        /// <summary>
+        /// DateAppliedHere control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label DateAppliedHere;
+        
+        /// <summary>
         /// PositionNotesLabel control.
         /// </summary>
         /// <remarks>
@@ -191,33 +218,6 @@ namespace AppliCan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label CompanyNotesHere;
-        
-        /// <summary>
-        /// AppliedPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel AppliedPanel;
-        
-        /// <summary>
-        /// DateAppliedLabel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DateAppliedLabel;
-        
-        /// <summary>
-        /// DateAppliedHere control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label DateAppliedHere;
         
         /// <summary>
         /// ContactInfoLabel control.
@@ -283,6 +283,15 @@ namespace AppliCan {
         protected global::System.Web.UI.WebControls.Label DateInterviewHere;
         
         /// <summary>
+        /// OfferPanel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel OfferPanel;
+        
+        /// <summary>
         /// HasOfferLabel control.
         /// </summary>
         /// <remarks>
@@ -299,15 +308,6 @@ namespace AppliCan {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label HasOfferHere;
-        
-        /// <summary>
-        /// OfferPanel control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel OfferPanel;
         
         /// <summary>
         /// OfferNotesLabel control.

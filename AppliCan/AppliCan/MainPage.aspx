@@ -5,6 +5,12 @@
             width: 200px;
             height: 200px;
         }
+  .hiddencol
+  {
+    display: none;
+  }
+
+
     </style>
 </asp:Content>
 <asp:Content ID="ContentMainB" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -45,10 +51,11 @@
         <asp:Button ID="SearchButton" runat="server" Text="Search" />
     </div>
     <br />
-    <asp:GridView ID="AccountGridView" runat="server" OnRowDataBound="AccountGridView_RowDataBound" AutoGenerateColumns="False" DataSourceID="AccountInfoSqlDataSource">
+    <asp:GridView ID="AccountGridView" ClientIDMode="Static" runat="server" OnRowDataBound="AccountGridView_RowDataBound" DataKeyNames="ID" AutoGenerateColumns="False" DataSourceID="AccountInfoSqlDataSource">
         <Columns>
+            <asp:BoundField DataField="ID" HeaderText="ID" SortExpression="ID" ItemStyle-CssClass="hiddencol" HeaderStyle-CssClass="hiddencol" ReadOnly="True" />
             <asp:BoundField DataField="JobTitle" HeaderText="Job Title" SortExpression="JobTitle" />
-            <asp:BoundField DataField="CompanyName" HeaderText="Company Name" SortExpression="CompanyName" />
+            <asp:BoundField DataField="CompanyName" HeaderText="Company" SortExpression="CompanyName" />
             <asp:BoundField DataField="HasApplied" HeaderText="Applied?" SortExpression="HasApplied" />
             <asp:BoundField DataField="DateAppCloses" HeaderText="Apply By" SortExpression="DateAppCloses" />
             <asp:BoundField DataField="DateInterview" HeaderText="Interview Date" SortExpression="DateInterview" />
@@ -56,14 +63,14 @@
         </Columns>
 </asp:GridView>
         <script type="text/javascript">
-            function ShowPopup(user) {
-                var popup = window.open("PopUp1.aspx", "ApplicationDetails");
+            function ShowPopup(id) {
+                var popup = window.open("PopUp1.aspx", "ApplicationDetails", "resizable=1,scrollbars=yes");
                 popup.moveTo(10, 10);
                 var gridview = document.getElementById('<%=AccountGridView.ClientID%>')
-                gridview.setAttribute("onclick", user)
+                gridview.setAttribute("onclick",id)
             }
         </script>
-        <asp:SqlDataSource ID="AccountInfoSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:applicanConnectionString %>" SelectCommand="SELECT [JobTitle], [CompanyName], [HasApplied], [DateAppCloses], [DateInterview], [DateOfferDeadline] FROM [AppliCanEntries] WHERE ([Enabled] = @Enabled)">
+        <asp:SqlDataSource ID="AccountInfoSqlDataSource" runat="server" ConnectionString="<%$ ConnectionStrings:applicanConnectionString %>" SelectCommand="SELECT [ID], [JobTitle], [CompanyName], [HasApplied], [DateAppCloses], [DateInterview], [DateOfferDeadline] FROM [AppliCanEntries] WHERE ([Enabled] = @Enabled)">
             <SelectParameters>
                 <asp:Parameter DefaultValue="1" Name="Enabled" Type="Int32" />
             </SelectParameters>

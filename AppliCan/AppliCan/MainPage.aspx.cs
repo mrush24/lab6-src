@@ -56,13 +56,13 @@ namespace AppliCan
                 e.Row.Attributes["onmouseout"] = "this.style.backgroundColor='white';this.style.color='black'";
 
                 e.Row.ToolTip = "Click to see details.";
-                e.Row.Attributes["onclick"] = "ShowPopup('"+ usernamehidden.Value +"')";
+                e.Row.Attributes["onclick"] = "ShowPopup('"+ e.Row.Cells[0].Text + "')";
             }
         }
        protected void LogoutButton_Click(object sender, EventArgs e)
         {
            Response.Redirect("~/LoginPage.aspx");
-           Session["Data"] = usernamehidden.Value;
+           Session["Data"] = null;
 
         }
 
