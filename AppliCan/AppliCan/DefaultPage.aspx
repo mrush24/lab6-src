@@ -14,7 +14,7 @@
             <asp:Button ID="LoginButton" runat="server" Text="Log In" width="100px" PostBackUrl="~/LoginPage.aspx"/>
         </td>
         <td class="auto-style2">
-            <asp:Button ID="SignupButton" runat="server" Text="Sign Up"  width="100px" />
+            <asp:Button ID="SignupButton" runat="server" Text="Sign Up"  width="100px" PostBackUrl="~/SignUpPage.aspx" />
         </td>
             
     </table>
