@@ -85,7 +85,7 @@ namespace AppliCan
                 } else {
                     entry.Favorite = 0;
                 }
-                entry.Location = CountryDropDownList.SelectedValue + " " + StateDropDownList.SelectedValue;
+                entry.Location = CountryDropDownList.SelectedValue + ", " + StateDropDownList.SelectedValue;
                 entry.HasApplied = AppliedDDL.SelectedValue;
                 entry.DateAppCloses = DateAppClosesCalendar.SelectedDate;
                 entry.PositionNotes = NotesPositionTextBox.Text;

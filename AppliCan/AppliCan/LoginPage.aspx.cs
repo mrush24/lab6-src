@@ -25,8 +25,8 @@ namespace AppliCan
             {
                 string user = UserNameTextBox.Text;
                 string pass = PasswordTextBox.Text;
-                bool userExists = ae.AppliCanAccounts.Any(Username => Username.Equals(user));
-                if (userExists)
+                var userExists = ae.AppliCanAccounts.SingleOrDefault(acc => acc.Username == user);
+                if (userExists != null)
                 {
                     bool passExists = ae.AppliCanAccounts.Any(Password => Password.Equals(pass));
                     if (passExists)

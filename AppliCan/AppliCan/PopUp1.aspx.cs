@@ -27,24 +27,32 @@ namespace AppliCan
                 DateAppliedHere.Text = entry.HasApplied;
                 PositionNotesHere.Text = entry.PositionNotes;
                 CompanyNotesHere.Text = entry.CompanyNotes;
+                ContactInfoHere.Text = entry.ContactInfo;
                 if (entry.HasApplied == "Yes")
                 {
+                    AppliedPanel.Visible = true;
                     DateAppliedHere.Text = entry.DateApplied + "";
                     HasInterviewHere.Text = entry.HasInterview;
                     if (entry.HasInterview == "Yes")
                     {
+                        InterviewPanel.Visible = true;
                         DateInterviewHere.Text = entry.DateInterview + "";
                         HasOfferHere.Text = entry.HasOffer;
                         if (entry.HasOffer == "Yes")
                         {
+                            OfferPanel.Visible = true;
                             OfferNotesHere.Text = entry.OfferNotes;
                             DateOfferGivenHere.Text = entry.DateOfferGiven + "";
                             DateOfferDeadlineHere.Text = entry.DateOfferDeadline + "";
-                            ContactInfoHere.Text = entry.ContactInfo;
                         }
                     }
                 }
             }
+        }
+
+        protected void EditButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/EditPage.aspx");
         }
     }
     

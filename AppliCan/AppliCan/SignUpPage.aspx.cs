@@ -21,8 +21,8 @@ namespace AppliCan
                 var entry = new AppliCanAccount();
                 string user = UsernameTextBox.Text;
                 string pass = PasswordTextBox.Text;
-                bool userExists = ae.AppliCanAccounts.Any(Username => Username.Equals(user));
-                if (!userExists)
+                var userExists = ae.AppliCanAccounts.SingleOrDefault(acc => acc.Username == user);
+                if (userExists == null)
                 {
                     entry.Username = user;
                     entry.Password = pass;
@@ -38,6 +38,11 @@ namespace AppliCan
 
             }
             
+        }
+
+        protected void LoginHereButton_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/LoginPage.aspx");
         }
     }
 }

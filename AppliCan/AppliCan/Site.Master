@@ -9,12 +9,17 @@
     </asp:ContentPlaceHolder>
     <style type="text/css">
         .auto-style2 {
+<<<<<<< HEAD
             width: 343px;
             height: 56px;
         }
         .auto-style3 {
             width: 115px;
             height: 65px;
+=======
+            /*width: 200;*/
+            height: 200px;
+>>>>>>> 51c86c41151769b01b25c6b502586c028af4bd3b
         }
     </style>
 </head>
