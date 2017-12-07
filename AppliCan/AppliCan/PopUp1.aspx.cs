@@ -29,14 +29,17 @@ namespace AppliCan
                 CompanyNotesHere.Text = entry.CompanyNotes;
                 if (entry.HasApplied == "Yes")
                 {
+                    AppliedPanel.Visible = true;
                     DateAppliedHere.Text = entry.DateApplied + "";
                     HasInterviewHere.Text = entry.HasInterview;
                     if (entry.HasInterview == "Yes")
                     {
+                        InterviewPanel.Visible = true;
                         DateInterviewHere.Text = entry.DateInterview + "";
                         HasOfferHere.Text = entry.HasOffer;
                         if (entry.HasOffer == "Yes")
                         {
+                            OfferPanel.Visible = true;
                             OfferNotesHere.Text = entry.OfferNotes;
                             DateOfferGivenHere.Text = entry.DateOfferGiven + "";
                             DateOfferDeadlineHere.Text = entry.DateOfferDeadline + "";
