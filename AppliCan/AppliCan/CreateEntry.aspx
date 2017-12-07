@@ -51,11 +51,7 @@
                             
                         </asp:DropDownList>
                         &nbsp;
-                        <asp:DropDownList ID="StateDropDownList" runat="server" Visible="False" OnSelectedIndexChanged="StateDropDownList_SelectedIndexChanged">
-                            
-                        </asp:DropDownList>
-                        &nbsp;
-                        <asp:DropDownList ID="CityDropDownList" runat="server" Visible="False">
+                        <asp:DropDownList ID="StateDropDownList" runat="server" Visible="False">
                             
                         </asp:DropDownList>
                     </div>

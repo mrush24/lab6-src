@@ -80,49 +80,44 @@
                         </div>
                         <br />
                         <div>
-                            <asp:Label ID="HasInterviewLabel" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="HasInterviewLabel" runat="server" Text="Interview:"></asp:Label>
                             &nbsp;
                             <asp:Label ID="HasInterviewHere" runat="server"></asp:Label>
                         </div>
                         <br />
                         <div>
-                            <asp:Label ID="DateInterviewLabel" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="DateInterviewLabel" runat="server" Text="Interview Date:"></asp:Label>
                             &nbsp
                             <asp:Label ID="DateInterviewHere" runat="server"></asp:Label>
                         </div>
                         <br />
                         <div>
-                            <asp:Label ID="HasOfferLabel" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="HasOfferLabel" runat="server" Text="Offer:"></asp:Label>
                             &nbsp;
                             <asp:Label ID="HasOfferHere" runat="server"></asp:Label>
                         </div>
                         <br />
                         <div>
-                            <asp:Label ID="OfferNotesLabel" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="OfferNotesLabel" runat="server" Text="Offer Info:"></asp:Label>
                             &nbsp;
                             <asp:Label ID="OfferNotesHere" runat="server"></asp:Label>
                         </div>
                         <br />
                         <div>
-                            <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="DateOfferGivenLabel" runat="server" Text="Offer Given:"></asp:Label>
                             &nbsp;
-                            <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                            <asp:Label ID="DateOfferGivenHere" runat="server"></asp:Label>
                         </div>
-	                    <asp:Label ID="AskedforInterview" runat="server" Text="Asked for interview?"></asp:Label>
-						&nbsp;<asp:Label ID="Label4" runat="server"></asp:Label>
-						<br /><br />
-                        <asp:Label ID="OfferInfo" runat="server" Text="Offer Details:"></asp:Label>
-						&nbsp;<asp:Label ID="Label5" runat="server"></asp:Label>
-						<br /><br />
-                        <asp:Label ID="Deadline" runat="server" Text="Offer Deadline:"></asp:Label>
-						&nbsp;<asp:Label ID="Label6" runat="server"></asp:Label>
-						<br /><br />
-					    <asp:Label ID="Notes" runat="server" Text="Notes:"></asp:Label>
+                        <br />
+                        <div>
+                            <asp:Label ID="DateOfferDeadlineLabel" runat="server" Text="Offer Deadline:"></asp:Label>
+                            &nbsp;
+                            <asp:Label ID="DateOfferDeadlineHere" runat="server"></asp:Label>
+                        </div>
+                        <br />
+                        <div>
 
-
-                    &nbsp;<asp:Label ID="Label7" runat="server"></asp:Label>
-
-
+                        </div>
                     </div>
 				</td>
 				
