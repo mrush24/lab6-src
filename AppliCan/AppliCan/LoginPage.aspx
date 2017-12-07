@@ -1,4 +1,4 @@
-﻿<%@ Page Title ="Login Page" Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="AppliCan.LoginPage" %>
+﻿<%@ Page Title ="Login Page" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="LoginPage.aspx.cs" Inherits="AppliCan.LoginPage" %>
 
 <asp:Content ID="ContentLogin" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
      <asp:HiddenField ID="usernamehide" runat="server" />
@@ -14,7 +14,8 @@
         <br />
             <asp:Button ID="LoginButton" runat="server" Text="Login" Width="100px" OnClick="LoginButton_Click" />
     <p>
-        &nbsp;</p>
+            <asp:Button ID="Button1" runat="server" Text="Create Account" OnClick="CreateAccount_Click" />
+            </p>
     <p>
         &nbsp;</p>
     </div>

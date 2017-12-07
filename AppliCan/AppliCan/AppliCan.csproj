@@ -296,6 +296,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\applicanlogogogogoo.png" />
     <Content Include="LoginPage.aspx" />
     <Content Include="MainPage.aspx" />
     <Content Include="Model1.Context.tt">

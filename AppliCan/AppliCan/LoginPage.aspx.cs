@@ -14,6 +14,11 @@ namespace AppliCan
             
         }
 
+        protected void CreateAccount_Click(object sender, EventArgs e) {  
+
+                        Response.Redirect("SignUpPage.aspx");
+        }
+
         protected void LoginButton_Click(object sender, EventArgs e)
         {
             using (applicanEntities ae = new applicanEntities())
