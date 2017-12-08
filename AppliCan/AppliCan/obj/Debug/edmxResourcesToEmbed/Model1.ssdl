@@ -12,8 +12,8 @@
     <Key>
       <PropertyRef Name="ID" />
     </Key>
-    <Property Name="ID" Type="int" Nullable="false" />
-    <Property Name="AccountUser" Type="nvarchar" MaxLength="50" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountUser" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
     <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
     <Property Name="Favorite" Type="int" />
@@ -24,16 +24,35 @@
     <Property Name="HasInterview" Type="nvarchar" MaxLength="50" />
     <Property Name="DateInterview" Type="datetime" />
     <Property Name="HasOffer" Type="nvarchar" MaxLength="50" />
-    <Property Name="OfferNotes" Type="nvarchar(max)" />
+    <Property Name="OfferNotes" Type="nvarchar" MaxLength="50" />
     <Property Name="DateOfferGiven" Type="datetime" />
     <Property Name="DateOfferDeadline" Type="datetime" />
     <Property Name="ContactInfo" Type="nvarchar" MaxLength="50" />
-    <Property Name="PositionNotes" Type="nvarchar(max)" />
-    <Property Name="CompanyNotes" Type="nvarchar(max)" />
+    <Property Name="PositionNotes" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyNotes" Type="nvarchar" MaxLength="50" />
     <Property Name="Enabled" Type="int" />
+  </EntityType>
+  <EntityType Name="tblapplicanCountry">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="country" Type="varchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tblUsaStates">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StateCode" Type="varchar" MaxLength="50" />
+    <Property Name="StateName" Type="varchar" MaxLength="50" />
+    <Property Name="IsRealState" Type="varchar" MaxLength="50" />
+    <Property Name="StateDate" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="applicanModelStoreContainer">
     <EntitySet Name="AppliCanAccounts" EntityType="Self.AppliCanAccounts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AppliCanEntries" EntityType="Self.AppliCanEntries" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblapplicanCountry" EntityType="Self.tblapplicanCountry" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUsaStates" EntityType="Self.tblUsaStates" Schema="dbo" store:Type="Tables" />
   </EntityContainer>
 </Schema>

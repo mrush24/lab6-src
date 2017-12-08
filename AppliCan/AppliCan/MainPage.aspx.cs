@@ -15,6 +15,7 @@ namespace AppliCan
         {
             if (!IsPostBack)
             {
+                AccountGridView.Visible = false;
               //  prevPage = Request.UrlReferrer.AbsolutePath;
             }
             if (IsPostBack)
@@ -28,9 +29,12 @@ namespace AppliCan
                 {
                     //if (prevPage.Contains("LoginPage"))
                     //{
-                        string query = "SELECT [JobTitle], [CompanyName], [HasApplied], [DateAppCloses], [DateInterview], [DateOfferDeadline] FROM [AppliCanEntries] WHERE([Enabled] = @Enabled)  AND [AccountUser] = '" + usernamehidden.Value + "'";
+                    AccountGridView.Visible = true;
+                    string query = "SELECT [ID], [JobTitle], [CompanyName], [HasApplied], [DateAppCloses], [DateInterview], [DateOfferDeadline] FROM [AppliCanEntries] WHERE [Enabled] = 1  AND [AccountUser] = '" + usernamehidden.Value + "'";
                         //AccountInfoSqlDataSource.SelectCommand = AccountInfoSqlDataSource.SelectCommand + " AND [AccountUser] = '"+ usernamehidden.Value + "'";
-                        AccountInfoSqlDataSource.SelectCommand = query;
+                    AccountInfoSqlDataSource.SelectCommand = query;
+                    AccountGridView.DataBind();
+                    //AccountGridView.Visible = true;
                     //}
                     //else
                     //{

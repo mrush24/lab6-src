@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="applicanEntities-Web.config Connection String" description="applicanEntities Connection String used in web.config by the application to access the database." defaultValue="metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=myapplican.cdmkdctpzpfk.us-east-2.rds.amazonaws.com,4646;initial catalog=applican;persist security info=True;user id=lorenzek;password=gustavoisbae;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\katep\\Documents\\GitHub\\lab6-src\\AppliCan\\AppliCan\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='applicanEntities']/@connectionString" />
+  </parameter>
+  <parameter name="applicanConnectionString-Web.config Connection String" description="applicanConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=myapplican.cdmkdctpzpfk.us-east-2.rds.amazonaws.com,4646;Initial Catalog=applican;Persist Security Info=True;User ID=lorenzek;Password=gustavoisbae;MultipleActiveResultSets=True;Application Name=EntityFramework" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\katep\\Documents\\GitHub\\lab6-src\\AppliCan\\AppliCan\\obj\\Debug\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='applicanConnectionString']/@connectionString" />
+  </parameter>
+</parameters>

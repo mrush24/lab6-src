@@ -17,6 +17,8 @@ namespace AppliCan
                 CountryDropDownList.Items.Insert(0, new ListItem("--select--", "0"));
                 StateDropDownList.AppendDataBoundItems = true;
                 StateDropDownList.Items.Insert(0, new ListItem("--select--", "0"));
+               // StateDropDownList.AutoPostBack = true;
+                StateDropDownList.Visible = true;
             }
             if (IsPostBack)
             {
@@ -29,13 +31,46 @@ namespace AppliCan
                     {
                         var num = Convert.ToInt32(IDhidden.Value);
                         var entry = ae.AppliCanEntries.Find(num);
-                        JobTitleTextBox.Text = entry.JobTitle;
-                        CompanyNameTextBox.Text = entry.CompanyName;
-                        var location = entry.Location;
-                        Char[] split = { ',', ' ' };
-                        String[] country = location.Split(split);
-                        CountryDropDownList.SelectedValue = country[0];
-                        StateDropDownList.SelectedValue = country[2];
+                        if (JobTitleTextBox.Text == "")
+                        {
+                            JobTitleTextBox.Text = entry.JobTitle;
+                        }
+                        if (CompanyNameTextBox.Text == "")
+                        {
+                            CompanyNameTextBox.Text = entry.CompanyName;
+                        }
+                        
+                        if (CountryDropDownList.SelectedValue == "0")
+                        {
+                            var location = entry.Location;
+                            Char[] split = { ',', ' ' };
+                            String[] country = location.Split(split);
+                            if (country[0] != "")
+                            {
+                                CountryDropDownList.SelectedValue = country[0];
+                                if (country[0] == "USA")
+                                {
+                                    //StateDropDownList.Visible = true;
+                                    if (country[2] != "")
+                                    {
+                                        StateDropDownList.SelectedValue = country[2];
+                                    }
+                                    else
+                                    {
+                                        StateDropDownList.SelectedValue = "0";
+                                    }
+                                }
+                                else
+                                {
+                                    StateDropDownList.Visible = false;
+                                }
+                            }
+                            else
+                            {
+                                CountryDropDownList.SelectedValue = "0";
+                            }
+                        }
+                        
                         if (entry.Favorite == 0)
                         {
                             FavCheckBox.Checked = false;
@@ -44,11 +79,27 @@ namespace AppliCan
                         {
                             FavCheckBox.Checked = true;
                         }
-                        AppliedDDL.SelectedValue = entry.HasApplied;
-                        DateAppClosesCalendar.SelectedDate = (System.DateTime)entry.DateAppCloses;
-                        NotesPositionTextBox.Text = entry.PositionNotes;
-                        NotesCompTextBox.Text = entry.CompanyNotes;
-                        ContactTextBox.Text = entry.ContactInfo;
+                        if (AppliedDDL.SelectedValue == "No")
+                        {
+                            AppliedDDL.SelectedValue = entry.HasApplied;
+                        }
+                        if (DateAppClosesCalendar.SelectedDate == DateTime.Today)
+                        {
+                            DateAppClosesCalendar.SelectedDate = (System.DateTime)entry.DateAppCloses;
+
+                        }
+                        if (NotesPositionTextBox.Text == "")
+                        {
+                            NotesPositionTextBox.Text = entry.PositionNotes;
+                        }
+                        if (NotesCompTextBox.Text == "")
+                        {
+                            NotesCompTextBox.Text = entry.CompanyNotes;
+                        }
+                        if (ContactTextBox.Text == "")
+                        {
+                            ContactTextBox.Text = entry.ContactInfo;
+                        }
                         if (entry.HasApplied == "Yes")
                         {
                             AppliedPanel.Visible = true;
@@ -106,6 +157,8 @@ namespace AppliCan
                 entry.DateAppCloses = DateAppClosesCalendar.SelectedDate;
                 entry.PositionNotes = NotesPositionTextBox.Text;
                 entry.CompanyNotes = NotesCompTextBox.Text;
+               // ContactTextBox.Text = "PLEASE?";
+                entry.ContactInfo = ContactTextBox.Text;
                 if (entry.HasApplied == "Yes")
                 {
                     entry.DateApplied = DateAppliedCalendar.SelectedDate;
@@ -119,7 +172,7 @@ namespace AppliCan
                             entry.OfferNotes = OfferInfoTextBox.Text;
                             entry.DateOfferGiven = OfferGivenCalendar.SelectedDate;
                             entry.DateOfferDeadline = OfferDeadlineCalendar.SelectedDate;
-                            entry.ContactInfo = ContactTextBox.Text;
+                            //entry.ContactInfo = ContactTextBox.Text;
                         }
                     }
                 }
@@ -128,27 +181,15 @@ namespace AppliCan
             }
             Session["ID"] = IDhidden.Value;
             Session["Data"] = usernamehidden.Value;
+            string script1 = "alert('This record has been saved.');";
+            string script2 = "window.close();";
+            string scriptTry = "window.opener.location.reload();";
+            string script3 = "window.opener.document.forms[0].submit();";
+            string script = script1 + script2 + scriptTry;// script3;
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "Alert", script, true);
         }
 
-        protected void CountryDropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void AppliedDDL_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void AskedInterviewDropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        protected void OfferDropDownList_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+      
 
         protected void ReturnButton_Click(object sender, EventArgs e)
         {

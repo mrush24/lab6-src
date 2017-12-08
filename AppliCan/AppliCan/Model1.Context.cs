@@ -26,8 +26,8 @@ namespace AppliCan
         }
     
         public virtual DbSet<AppliCanAccount> AppliCanAccounts { get; set; }
-        public virtual DbSet<AppliCanEntry> AppliCanEntries { get; set; }
         public virtual DbSet<tblapplicanCountry> tblapplicanCountries { get; set; }
         public virtual DbSet<tblUsaState> tblUsaStates { get; set; }
+        public virtual DbSet<AppliCanEntry> AppliCanEntries { get; set; }
     }
 }

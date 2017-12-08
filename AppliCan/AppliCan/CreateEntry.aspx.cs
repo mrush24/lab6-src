@@ -90,7 +90,7 @@ namespace AppliCan
             using (applicanEntities ae = new applicanEntities())
             {
                 var entry = new AppliCanEntry();
-                //entry.AccountUser = textbox.text;
+                entry.AccountUser = usernamehide.Value;
                 entry.JobTitle = JobTitleTextBox.Text;
                 entry.CompanyName = CompanyNameTextBox.Text;
                 //Check what type this is
@@ -142,5 +142,7 @@ namespace AppliCan
         {
 
         }
+
+        
     }
 }

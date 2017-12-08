@@ -17,8 +17,8 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" />
-          <Property Name="AccountUser" Type="nvarchar" MaxLength="50" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountUser" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
           <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
           <Property Name="Favorite" Type="int" />
@@ -29,12 +29,12 @@
           <Property Name="HasInterview" Type="nvarchar" MaxLength="50" />
           <Property Name="DateInterview" Type="datetime" />
           <Property Name="HasOffer" Type="nvarchar" MaxLength="50" />
-          <Property Name="OfferNotes" Type="nvarchar(max)" />
+          <Property Name="OfferNotes" Type="nvarchar" MaxLength="50" />
           <Property Name="DateOfferGiven" Type="datetime" />
           <Property Name="DateOfferDeadline" Type="datetime" />
           <Property Name="ContactInfo" Type="nvarchar" MaxLength="50" />
-          <Property Name="PositionNotes" Type="nvarchar(max)" />
-          <Property Name="CompanyNotes" Type="nvarchar(max)" />
+          <Property Name="PositionNotes" Type="nvarchar" MaxLength="50" />
+          <Property Name="CompanyNotes" Type="nvarchar" MaxLength="50" />
           <Property Name="Enabled" Type="int" />
         </EntityType>
         <EntityType Name="tblapplicanCountry">
@@ -72,35 +72,11 @@
           <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
-        <EntityType Name="AppliCanEntry">
-          <Key>
-            <PropertyRef Name="ID" />
-          </Key>
-          <Property Name="ID" Type="Int32" Nullable="false" />
-          <Property Name="AccountUser" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Favorite" Type="Int32" />
-          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="HasApplied" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DateApplied" Type="DateTime" Precision="3" />
-          <Property Name="DateAppCloses" Type="DateTime" Precision="3" />
-          <Property Name="HasInterview" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DateInterview" Type="DateTime" Precision="3" />
-          <Property Name="HasOffer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="OfferNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="DateOfferGiven" Type="DateTime" Precision="3" />
-          <Property Name="DateOfferDeadline" Type="DateTime" Precision="3" />
-          <Property Name="ContactInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="PositionNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="CompanyNotes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Name="Enabled" Type="Int32" />
-        </EntityType>
         <EntityContainer Name="applicanEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AppliCanAccounts" EntityType="Self.AppliCanAccount" />
-          <EntitySet Name="AppliCanEntries" EntityType="Self.AppliCanEntry" />
           <EntitySet Name="tblapplicanCountries" EntityType="applicanModel.tblapplicanCountry" />
           <EntitySet Name="tblUsaStates" EntityType="applicanModel.tblUsaState" />
+          <EntitySet Name="AppliCanEntries" EntityType="applicanModel.AppliCanEntry" />
         </EntityContainer>
         <EntityType Name="tblapplicanCountry">
           <Key>
@@ -119,6 +95,30 @@
           <Property Name="IsRealState" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="StateDate" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="AppliCanEntry">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountUser" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="JobTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Favorite" Type="Int32" />
+          <Property Name="Location" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="HasApplied" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateApplied" Type="DateTime" Precision="3" />
+          <Property Name="DateAppCloses" Type="DateTime" Precision="3" />
+          <Property Name="HasInterview" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateInterview" Type="DateTime" Precision="3" />
+          <Property Name="HasOffer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="OfferNotes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfferGiven" Type="DateTime" Precision="3" />
+          <Property Name="DateOfferDeadline" Type="DateTime" Precision="3" />
+          <Property Name="ContactInfo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PositionNotes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CompanyNotes" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Enabled" Type="Int32" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -131,31 +131,6 @@
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Password" ColumnName="Password" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="AppliCanEntries">
-            <EntityTypeMapping TypeName="applicanModel.AppliCanEntry">
-              <MappingFragment StoreEntitySet="AppliCanEntries">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="AccountUser" ColumnName="AccountUser" />
-                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
-                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
-                <ScalarProperty Name="Favorite" ColumnName="Favorite" />
-                <ScalarProperty Name="Location" ColumnName="Location" />
-                <ScalarProperty Name="HasApplied" ColumnName="HasApplied" />
-                <ScalarProperty Name="DateApplied" ColumnName="DateApplied" />
-                <ScalarProperty Name="DateAppCloses" ColumnName="DateAppCloses" />
-                <ScalarProperty Name="HasInterview" ColumnName="HasInterview" />
-                <ScalarProperty Name="DateInterview" ColumnName="DateInterview" />
-                <ScalarProperty Name="HasOffer" ColumnName="HasOffer" />
-                <ScalarProperty Name="OfferNotes" ColumnName="OfferNotes" />
-                <ScalarProperty Name="DateOfferGiven" ColumnName="DateOfferGiven" />
-                <ScalarProperty Name="DateOfferDeadline" ColumnName="DateOfferDeadline" />
-                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
-                <ScalarProperty Name="PositionNotes" ColumnName="PositionNotes" />
-                <ScalarProperty Name="CompanyNotes" ColumnName="CompanyNotes" />
-                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -174,6 +149,31 @@
                 <ScalarProperty Name="IsRealState" ColumnName="IsRealState" />
                 <ScalarProperty Name="StateName" ColumnName="StateName" />
                 <ScalarProperty Name="StateCode" ColumnName="StateCode" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AppliCanEntries">
+            <EntityTypeMapping TypeName="applicanModel.AppliCanEntry">
+              <MappingFragment StoreEntitySet="AppliCanEntries">
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="CompanyNotes" ColumnName="CompanyNotes" />
+                <ScalarProperty Name="PositionNotes" ColumnName="PositionNotes" />
+                <ScalarProperty Name="ContactInfo" ColumnName="ContactInfo" />
+                <ScalarProperty Name="DateOfferDeadline" ColumnName="DateOfferDeadline" />
+                <ScalarProperty Name="DateOfferGiven" ColumnName="DateOfferGiven" />
+                <ScalarProperty Name="OfferNotes" ColumnName="OfferNotes" />
+                <ScalarProperty Name="HasOffer" ColumnName="HasOffer" />
+                <ScalarProperty Name="DateInterview" ColumnName="DateInterview" />
+                <ScalarProperty Name="HasInterview" ColumnName="HasInterview" />
+                <ScalarProperty Name="DateAppCloses" ColumnName="DateAppCloses" />
+                <ScalarProperty Name="DateApplied" ColumnName="DateApplied" />
+                <ScalarProperty Name="HasApplied" ColumnName="HasApplied" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="Favorite" ColumnName="Favorite" />
+                <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+                <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+                <ScalarProperty Name="AccountUser" ColumnName="AccountUser" />
                 <ScalarProperty Name="ID" ColumnName="ID" />
               </MappingFragment>
             </EntityTypeMapping>
